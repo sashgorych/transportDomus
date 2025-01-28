@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/auth.css">
+
+</head>
+<script>
+    var emailErrorLength = "The email field is required"
+    var emailErrorValid = "The email field must be a valid email"
+    var firstnameErrorLength = "The first name field is required"
+    var lastnameErrorLength = "The last name field is required"
+    var phoneErrorValid = "Enter phone correctly"
+    var passwordErrorValid = "The password field is required"
+    var passwordErrorEqual = "passwords must be equal"
+    var authError = "Wrong email of password."
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+
+    <div class="container">
+<!--       for customer-->
+        <div class="auth-container">
+            <div class="registration-container">
+                <h2 class="h1 mb-40">Registration almost completed</h2>
+                    <p>We have sent an email with a confirmation link to your email address. In order to complete the registration process, please click the confirmation link.</p>
+
+                <a href="/" class="btn mt-20">Go main page</a>
+            </div>
+
+        </div>
+
+        <!--     for   driver, cleaner, mover-->
+        <div class="auth-container">
+            <div class="registration-container">
+                <h2 class="h1 mb-40">Registration completed</h2>
+                    <p>Your registration process is completed. You will receive email as soon as your account will be approved by the administrator.</p>
+                <a href="/" class="btn mt-20">Go main page</a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/auth.js"></script>

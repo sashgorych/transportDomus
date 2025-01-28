@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/profile.css">
+
+</head>
+<script>
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="my-invoice-page">
+        <div class="container-small custom-padding">
+            <h2 class="page-title text-left">Invoices <span id="myinvoiceCount"></span></h2>
+            <div class="payment-block payment-table">
+                <span class="no-data hide">No records</span>
+                <table role="table" aria-busy="false" aria-colcount="5" class="table b-table table-striped table-hover" id="__BVID__142">
+                <thead role="rowgroup" class="">
+                <tr role="row" class="">
+                    <th role="columnheader" scope="col" aria-colindex="1" class="">
+                        <div>Date</div>
+                    </th>
+                    <th role="columnheader" scope="col" aria-colindex="2" class="">
+                        <div>Bill Id</div>
+                    </th>
+                    <th role="columnheader" scope="col" aria-colindex="4" class="">
+                        <div>Request</div>
+                    </th>
+                    <th role="columnheader" scope="col" aria-colindex="5" class="">
+                        <div>Amount</div>
+                    </th>
+                    <th role="columnheader" scope="col" aria-colindex="6" class="">
+                        <div>Action</div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody role="rowgroup">
+                <tr role="row" class="loading-anim">
+                    <td aria-colindex="1" role="cell" class="">yyyy-mm-dd</td>
+                    <td aria-colindex="2" role="cell" class=""><a href="">I000000-0</a></td>
+                    <td aria-colindex="3" role="cell" class="">#00000</td>
+                    <td aria-colindex="4" role="cell" class="">0.00 $</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+            <nav aria-label="pagination" class="steps-nav">
+            </nav>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+    @@include('blocks/footer.html')
+    <script src="/js/vars.js"></script>
+    <!--    <script src="/js/my-requests.js"></script>-->

@@ -1,0 +1,67 @@
+@import './blocks/_forms.scss';
+.rating-leave {
+  width: 110px;
+}
+.rating_container{
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+}
+.rating-leave-box {
+  width: 100%;
+  background: white;
+  box-sizing: border-box;
+}
+
+.rating-leave span {
+  cursor: pointer;
+  float: right;
+  position: relative;
+}
+
+.rating-leave span input {
+  position: absolute;
+  top: 0px;
+  cursor: pointer;
+  left: 0px;
+  opacity: 0;
+}
+
+.rating-leave span label {
+  display: inline-block;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
+  text-align: center;
+  color: #FFF;
+  background: url("../images/star-gray.svg") no-repeat;
+  background-size: cover;
+  font-size: 30px;
+  margin-right: 2px;
+  line-height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+.rating-leave span:hover ~ span label,
+.rating-leave span:hover label,
+.rating-leave span.checked label,
+.rating-leave span.checked ~ span label {
+  background: url("../images/star.svg") no-repeat;
+  background-size: cover;
+}
+.feedback-leave{
+  .btn-row{
+    justify-content: flex-end;
+  }
+  margin: 5vw auto;
+  .label{
+    white-space: nowrap;
+    margin-right: 15px;
+  }
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  max-width: 600px;
+}

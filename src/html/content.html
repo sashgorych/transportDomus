@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+</head>
+<body class="">
+<div class="layout">
+    <header>
+        <div class="container">
+            <div class="header-in">
+                <a href="" class="logo"><img src="./images/logo.png" alt="logo"></a>
+                <button class="open-page-menu" aria-label="open menu">
+                    <div class="menu-mob"><span></span></div>
+                </button>
+                <nav class="nav">
+                    <div class="nav-container">
+                        <div class="nav-container-in">
+                            <ul class="ul-h1">
+                                <li class="has-drop arr-down">
+                                    <a href="">Services
+                                    </a>
+                                    <div class="submenu">
+                                        <ul>
+                                            <li><a href="">Moving</a></li>
+                                            <li><a href="">Delivery</a></li>
+                                            <li><a href="">Removal & Cleaning of building waste</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="">Advices</a></li>
+                            </ul>
+                            <ul class="ul-h2">
+                                <li>
+                                    <a href="tel:+15147094588" target="_self" class="nav-link">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone"
+                                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                             class="pr-1 svg-inline--fa fa-phone">
+                                            <path fill="currentColor"
+                                                  d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"
+                                                  class=""></path>
+                                        </svg>
+                                        514-709-4588
+                                    </a>
+                                </li>
+                                <li><a href="" class="log-in">Log in</a></li>
+                                <li>
+                                    <div class="language arr-down">
+                                        <div class="cur_lang">
+                                            <span class="eng"><span>Eng</span></span>
+                                        </div>
+                                        <ul class="lang-list">
+                                            <li><a href="" class="eng"><span>Eng</span></a></li>
+                                            <li><a href="" class="fr"><span>Fr</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container-small">
+        <div class="custom-padding">
+        <div class="feedback-leave ">
+        <h2 class="page-title">Leave feedback for request #<span id="req">2322554</span></h2>
+            <form action="">
+                <input class="js-rating-input" name="obj[data][rating]" type="hidden" value="5">
+                <input name="obj[data][order_id]" type="hidden" value="">
+            <div class="rating_container">
+                <span class="label">Your assessment</span>
+                <div class="rating-leave-box">
+                    <div class="rating-leave">
+                        <span class="checked"><input type="radio" name="userside_rating" id="str5" value="5"><label for="str5"></label></span>
+                        <span class=""><input type="radio" name="userside_rating" id="str4" value="4"><label for="str4"></label></span>
+                        <span class=""><input type="radio" name="userside_rating" id="str3" value="3"><label for="str3"></label></span>
+                        <span class=""><input type="radio" name="userside_rating" id="str2" value="2"><label for="str2"></label></span>
+                        <span class=""><input type="radio" name="userside_rating" id="str1" value="1"><label for="str1"></label></span>
+                    </div>
+                </div>
+            </div>
+                <div class="form">
+                    <div class="form-row">
+                        <textarea placeholder="Comment" id="comment_customer" name="obj[data][comment]" rows="5" wrap="soft" class="textarea"></textarea>
+                        <label for="comment_customer">Your comment</label>
+                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                    </div>
+                </div>
+                <div class="btn-row">
+                <button type="submit" class="btn">Send</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    @@include('blocks/footer.html')
+
+    <script>
+
+    </script>

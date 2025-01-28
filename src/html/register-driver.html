@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/auth.css">
+
+</head>
+<script>
+    var emailErrorLength = "The email field is required"
+    var emailErrorValid = "The email field must be a valid email"
+    var firstnameErrorLength = "The first name field is required"
+    var lastnameErrorLength = "The last name field is required"
+    var phoneErrorValid = "Enter phone correctly"
+    var passwordErrorValid = "The password field is required"
+    var passwordErrorEqual = "passwords must be equal"
+    var authError = "Wrong email of password."
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="container">
+        <div class="auth-container">
+            <div class="registration-container">
+                <div class="customer-reg">
+                    <div class="form-card">
+                        <h2>Driver registration</h2>
+                        <form action="" id="registerformDriver" class="registerform">
+                            <input type="text" name="obj[data][userType]" id="userType" class="hidden-object" value="driver">
+                            <div class="step1">
+                                <h4 class="mt-4">Contact person</h4>
+                                <div class="form" id="personalInfo">
+                                    <div class="row">
+                                        <div class="p-2">
+                                            <div class="form-row firstname-form-row">
+                                                <label for="firstName" class="label">First name*</label>
+                                                <input class="all-cback-inp" value="" placeholder=""
+                                                       name="obj[data][name]"
+                                                       type="text" id="firstName" autocomplete="given-name"
+                                                       autocompletetype="given-name">
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The first name field is required</span>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="form-row lastname-form-row">
+                                                <label for="lastName" class="label">Last name*</label>
+                                                <input class="all-cback-inp" value="" placeholder=""
+                                                       name="obj[data][lastname]" type="text" id="lastName"
+                                                       autocomplete="family-name" autocompletetype="family-name">
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The last name field is required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row email-form-row">
+                                        <label for="email" class="label">Email*</label>
+                                        <input class="all-cback-inp" value="" placeholder="" name="obj[data][email]"
+                                               type="email" id="email" autocomplete="email" autocompletetype="email">
+                                        <span class="all-cback-inp-span cback-inp-error-text">*Enter email correctly</span>
+
+                                    </div>
+                                    <div class="form-row phone-form-row">
+                                        <label for="phone" class="label">Phone number*</label>
+                                        <input class="all-cback-inp not-phone-mask" value="" placeholder=""
+                                               name="obj[data][phone]" id="phone" type="tel" autocomplete="tel-local"
+                                               autocompletetype="tel-local">
+                                        <span class="all-cback-inp-span cback-inp-error-text">*Enter phone correctly</span>
+
+                                    </div>
+                                    <div class="row">
+                                        <input type="text" class="hidden-object" name="obj[data][city_latlng]" aria-hidden="true" id="city_latlng">
+                                        <div class="p-2">
+                                            <div class="form-row city_name-form-row">
+                                                <input class="all-cback-inp" value="" required placeholder=""
+                                                       name="obj[data][city_name]"
+                                                       type="text"
+                                                       id="city_name">
+                                                <label for="city_name" class="label">Your city*</label>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-row password-form-row">
+                                        <label for="password" class="label">Password *</label>
+                                        <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]"
+                                               type="password" id="password">
+                                        <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                                    </div>
+                                    <div class="form-row password-repeat-form-row">
+                                        <label for="password" class="label">Repeat Password*</label>
+                                        <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]"
+                                               type="password" id="password-check">
+                                        <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                                    </div>
+
+
+                                </div>
+                                <div class="btn-row">
+                                    <a href="" class="d-block" id="go-back-auth">Previous</a>
+                                    <button type="button" class="btn" id="driver-next-step">Continue</button>
+
+                                </div>
+                            </div>
+                            <div class="step2">
+                                <h4>Company information</h4>
+                                <fieldset class="form-group">
+                                    <legend tabindex="-1">Business type</legend>
+                                    <div role="radiogroup" tabindex="-1" class="bv-no-focus-ring">
+                                        <div class="custom-control custom-control-inline custom-radio">
+                                            <input type="radio" checked name="data[obj][businessType]"
+                                                   class="custom-control-input" value="individual" id="individual_inp">
+                                            <label class="custom-control-label" for="individual_inp">Individual</label>
+                                        </div>
+                                        <div class="custom-control custom-control-inline custom-radio">
+                                            <input type="radio" name="data[obj][businessType]"
+                                                   class="custom-control-input" value="company" id="company_inp">
+                                            <label class="custom-control-label" for="company_inp">Company</label>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <div class="company-fields">
+                                    <div class="form">
+                                        <div class="form-row companyName-form-row">
+                                            <label for="companyName" class="label">Company name*</label>
+                                            <input class="all-cback-inp requiredFill-company" value="" placeholder=""
+                                                   name="obj[data][companyName]" type="text" id="companyName"
+                                                   autocomplete="companyName" autocompletetype="companyName">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The name field is required</span>
+                                        </div>
+                                        <div class="form-row companyAddress-form-row">
+                                            <label for="companyAddress" class="label">Company address*</label>
+                                            <input class="all-cback-inp requiredFill-company" value="" placeholder=""
+                                                   name="obj[data][companyAddress]" type="text" id="companyAddress"
+                                                   autocomplete="companyAddress" autocompletetype="companyAddress">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="p-1-3">
+                                                <div class="form-row companyIdentification-form-row active">
+                                                    <label for="companyIdentification" class="label">Company
+                                                        Identification*</label>
+                                                    <select class="custom-select custom-select-lg requiredFill-company"
+                                                            name="obj[data][companyIdentification]"
+                                                            id="companyIdentification">
+                                                        <option value="" disabled selected>select</option>
+                                                        <optgroup label="Quebec">
+                                                            <option value="NEQ">NEQ</option>
+                                                        </optgroup>
+                                                        <optgroup label="Ontario">
+                                                            <option value="BIN">BIN</option>
+                                                            <option value="OCN">OCN</option>
+                                                        </optgroup>
+                                                    </select>
+                                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                                </div>
+
+                                            </div>
+                                            <div class="p-2-3">
+                                                <div class="form-row companyIdentificationNumber-form-row">
+                                                    <label for="companyIdentificationNumber" class="label">Identification number*</label>
+
+                                                    <input class="all-cback-inp requiredFill-company" value="" placeholder=""
+                                                           name="obj[data][companyIdentificationNumber]" type="text"
+                                                           id="companyIdentificationNumber"
+                                                    >
+                                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row insurance-form-row">
+                                            <span class="label-normal">Upload cargo or liability insurance certificate (PDF, JPG, PNG)*</span>
+                                            <label for="file" class="no-label file-label">Add file</label>
+                                            <div class=""></div>
+                                            <input id="file" class="hidden-object requiredFill-company" name="obj[data][insuranceFile]"
+                                                   type="file">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                        </div>
+                                        <div class="form-row date-form-row">
+                                            <label for="firstName" class="label img-left"><img src="./images/date.svg"
+                                                                                               alt="date">Select
+                                                date*</label>
+                                            <input class="all-cback-inp requiredFill-company date" value="" placeholder=""
+                                                   name="obj[data][companyInsuranceDate]" type="text" autocomplete="off" id="insuranceDate">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The  field is required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <fieldset class="col-radio" id="vehicle-row">
+                                    <legend>Your vehicle</legend>
+                                    <input type="hidden" name="obj[data][vehicleType]">
+                                    <div role="group" aria-labelledby="checkbox-group">
+                                        <div class="mb-20">
+                                            <input type="checkbox" name="obj[data][vehicleType_hidden]"
+                                                   class="styled-checkbox hidden-object" value="26" id="vehicle26">
+                                            <label class="no-label" for="vehicle26">26 feet</label>
+                                        </div>
+                                        <div class="mb-20">
+                                            <input type="checkbox" name="obj[data][vehicleType_hidden]"
+                                                   class="styled-checkbox hidden-object" value="24" id="vehicle24">
+                                            <label class="no-label" for="vehicle24">24 feet</label>
+                                        </div>
+                                        <div class="mb-20">
+                                            <input type="checkbox" name="obj[data][vehicleType_hidden]"
+                                                   class="styled-checkbox hidden-object" value="20" id="vehicle20">
+                                            <label class="no-label" for="vehicle20">20 feet</label>
+                                        </div>
+                                        <div class="mb-20">
+                                            <input type="checkbox" name="obj[data][vehicleType_hidden]"
+                                                   class="styled-checkbox hidden-object" value="16" id="vehicle16">
+                                            <label class="no-label" for="vehicle16">16 feet</label>
+                                        </div>
+                                        <div class="mb-20">
+                                            <input type="checkbox" name="obj[data][vehicleType_hidden]"
+                                                   class="styled-checkbox hidden-object" value="12" id="vehicle12">
+                                            <label class="no-label" for="vehicle12">12 feet</label>
+                                        </div>
+                                        <div class="mb-20">
+                                            <input type="checkbox" name="obj[data][vehicleType_hidden]"
+                                                   class="styled-checkbox hidden-object" value="8" id="vehicle8">
+                                            <label class="no-label" for="vehicle8">8 feet</label>
+                                        </div>
+                                        <div class="mb-20">
+                                            <input type="checkbox" name="obj[obj][vehicleType_hidden]"
+                                                   class="styled-checkbox hidden-object" value="4" id="vehicle4">
+                                            <label class="no-label" for="vehicle4">4 feet</label>
+                                        </div>
+
+                                    </div>
+                                    <span class="all-cback-inp-span cback-inp-error-text">*The car type field is required</span>
+
+                                </fieldset>
+                                <div class="form-outro">
+                               <span class="small">Domus collects your data for the purpose of creating and managing your account. Learn more about <a
+                                       href="/">data protection policies</a>.</span>
+                                    <span class="small">
+                                    By registering on Domus, you agree to our <a href="/">terms and conditions</a>.
+                                </span>
+                                </div>
+                                <div class="btn-row">
+                                    <a href="" class="d-block" id="go-step1-driver">Previous</a>
+                                    <button type="submit" class="btn">Sign up</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/auth-address.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwiUJfNYOssvARiVlNspEPt36YXzyP_c&callback=initMap&libraries=places&v=weekly,places&ext,geometry" defer></script>

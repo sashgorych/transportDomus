@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/services.css">
+
+</head>
+<script>
+</script>
+
+
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="container-small">
+
+
+        <div class="preview-services preview-page">
+            <div class="preview-container custom-padding">
+                <button class="print btn" id="print"><img src="/images/print.svg" alt="print">Print</button>
+                <h2 class="page-title">Request <span id="req"></span></h2>
+                <h4 class="contains-image mb-20">
+                    <svg data-v-2c8ac7f7="" aria-hidden="true" focusable="false" data-prefix="far"
+                         data-icon="calendar-days" role="img" xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 448 512" class="svg-inline--fa fa-calendar-days">
+                        <path data-v-2c8ac7f7="" fill="#39b54a" d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 248H128V192H48V248zM48 296V360H128V296H48zM176 296V360H272V296H176zM320 296V360H400V296H320zM400 192H320V248H400V192zM400 408H320V464H384C392.8 464 400 456.8 400 448V408zM272 408H176V464H272V408zM128 408H48V448C48 456.8 55.16 464 64 464H128V408zM272 192H176V248H272V192z" class=""></path>
+                    </svg>
+                    Review
+                </h4>
+
+                <div class="prev-address">
+                    <div class="google-map loading-anim">
+                        <div id="map"></div>
+                    </div>
+                    <div class="addr-text loading-anim">
+                        <div class="mb-40">
+                            <p><strong><span id="service_type_name">Delivery</span> date:</strong> <span id="datePreview"></span></p>
+                            <p><strong>Time: </strong><span id="timePreview"></span></p>
+                        </div>
+                        <div class="addr-text-item">
+                            <div class="addr-text-item-img">
+                                <img src="/images/moving_from.svg" alt="moving_from">
+                            </div>
+                            <div class="addr-text-item-info">
+                                <h4>Moving from</h4>
+
+                                <div id="moving_from_preview"></div>
+                            </div>
+                        </div>
+                        <div class="destination-container">
+                            <div class="flex">
+                                <div class="addr-text-item-img">
+                                    <img src="/images/moving_to.svg" alt="moving_to">
+                                </div>
+                                <h4>Moving To</h4>
+
+                            </div>
+                            <div id="moving_to_preview"></div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="contains-image mb-20" id="listItemsTitle">
+                    <svg data-v-2c8ac7f7="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="box"
+                         role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                         class="svg-inline--fa fa-box">
+                        <path data-v-2c8ac7f7="" fill="#39b54a"
+                              d="M50.73 58.53C58.86 42.27 75.48 32 93.67 32H208V160H0L50.73 58.53zM240 160V32H354.3C372.5 32 389.1 42.27 397.3 58.53L448 160H240zM448 416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V192H448V416z"
+                              class=""></path>
+                    </svg>
+                    List of items to be moved
+                </h4>
+                <div class="items-list non-edit mb-40">
+                    <div class="items-list-cont-out-2">
+
+                    </div>
+                </div>
+                <h4 class="flex items-center mb-20">Additional information
+                </h4>
+                <div class="card-tips" id="additionalDetailsBlock">
+                    <div class="card-t-title">
+                        <p>Customer Note</p>
+                    </div>
+                    <div class="card-t-content" id="customer-note-preview">
+                    </div>
+                </div>
+                <div class="card-tips">
+                    <div class="card-t-title">
+                        <p>Customer info</p>
+                    </div>
+                    <div class="card-t-content">
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>Full name *:</p>
+                            <p id="fullnamePreview"></p>
+                        </div>
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>
+                                Phone number *:
+                            </p>
+                            <p id="phoneNumberPreview">
+
+                            </p>
+                        </div>
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>
+                                Email *:
+                            </p>
+                            <p id="emailPreview"></p>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="card-tips">
+                    <div class="card-t-title">
+                        <p>Truck type</p>
+                    </div>
+                    <div class="card-t-content">
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>
+                                Truck type:
+                            </p>
+                            <p id="truckTypePreview">
+                            </p>
+                        </div>
+                        <div class="flex justify-content--space-between mb-20 hide" id="needHelperPreview">
+                            <p>
+                                Need helper
+                            </p>
+                            <p>Yes</p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <h4 class="flex items-center mb-20">
+                    Photos
+                </h4>
+                <div class="photos-preview" id="photos-preview">
+
+                </div>
+                <h4 class="flex items-center mb-20">
+                    Contact information
+                </h4>
+                <p class="mb-20"><strong>Phone:</strong> <span id="contactInfoPhonePreview"></span> (will not be shown on the website)</p>
+                <p class="mb-20"><strong>Email:</strong><span id="contactInfoEmailPreview"></span>  (will not be shown on the website)
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/vars.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/googlemap.js"></script>
+<script src="./js/services-preview.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwiUJfNYOssvARiVlNspEPt36YXzyP_c&callback=initMap&libraries=places&v=weekly,places&ext,geometry" defer></script>
+
+

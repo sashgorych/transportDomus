@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/mainpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+</head>
+<body class="">
+<div class="layout">
+    <header>
+        <div class="container">
+        <div class="header-in">
+            <a href="" class="logo"><img src="./images/logo.png" alt="logo"></a>
+            <button class="open-page-menu" aria-label="open menu">
+                <div class="menu-mob"><span></span></div>
+            </button>
+            <nav class="nav">
+                <div class="nav-container">
+                    <div class="nav-container-in">
+                <ul class="ul-h1">
+                    <li class="has-drop arr-down" >
+                        <a href="">Services
+                    </a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="">Moving</a></li>
+                                    <li><a href="">Delivery</a></li>
+                                    <li><a href="">Removal & Cleaning of building waste</a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li><a href="">Advices</a></li>
+                </ul>
+                <ul class="ul-h2">
+                    <li>
+                        <a href="tel:+15147094588" target="_self" class="nav-link"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="pr-1 svg-inline--fa fa-phone"><path fill="currentColor" d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" class=""></path></svg>
+                            514-709-4588
+                        </a>
+                    </li>
+                    <li>  <a href="" class="log-in">Log in</a></li>
+                    <li>
+                        <div class="language arr-down">
+                            <div class="cur_lang">
+                                <span class="eng"><span>Eng</span></span>
+                            </div>
+                            <ul class="lang-list">
+                                <li><a href="" class="eng"><span>Eng</span></a></li>
+                                <li><a href="" class="fr"><span>Fr</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        </div>
+    </header>
+
+
+    <div class="default_popup2 temp_popups" id="finalize-order" style="z-index:35">
+        <div class="popup_close2">
+            <div class="icon-close2"><span></span></div>
+        </div>
+        <div class="popup_body2 default-text">
+            <div class="popup_title2">
+                <p class="h5">Create invoice for request #<span id="finalize-text-order_id"></span> <span id="finalize-service_type"></span></p>
+            </div>
+            <div class="popup_content2">
+                <div class="make-bid-content">
+                    <form action="" id="finalize-form">
+                        <input type="hidden" id="order_id_final" name="obj[data][order_id]">
+                        <input type="hidden" id="customer_id" name="obj[data][user_id]">
+                        <input type="hidden" id="order_id" name="obj[data][order_id]">
+                        <input type="hidden" id="service_type" name="obj[data][service_type]">
+                        <div class="form">
+                            <div class="row">
+                                <div class="p-2">
+                                    <div class="form-row">
+                                        <input class="all-cback-inp pac-target-input" value="customer_name123"
+                                               placeholder="" name="obj[data][customer_name]" readonly type="text" id="customer_name"
+                                               autocomplete="off">
+                                        <label for="customer_name" class="label">Customer name</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Payment</p>
+                            <div class="row">
+                                <div class="p-2">
+                                    <div class="form-row hour_cost-form-row hide">
+                                        <input class="all-cback-inp pac-target-input no-arrows" readonly value=""
+                                               placeholder="" name="obj[data][hour_cost]" type="text" id="hourly_cost"
+                                               autocomplete="off">
+                                        <label for="hourly_cost" class="label">Hourly cost, for 1 hour, $</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                    <div class="form-row fixed_payment-form-row hide">
+                                        <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                               placeholder="" name="obj[data][fixed_payment]" readonly type="text"
+                                               id="fixed_cost" autocomplete="off">
+                                        <label for="fixed_cost" class="label">Fixed price, $</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                    <div class="form-row transportation_cost-form-row hide" >
+                                        <input class="all-cback-inp pac-target-input no-arrows" readonly value=""
+                                               placeholder="" name="obj[data][transportation_cost]" type="text"
+                                               id="transportation_cost" autocomplete="off">
+                                        <label for="transportation_cost" class="label">Travel expenses, $ </label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>Quote info </p>
+                            <div class="row">
+                                <div class="p-2">
+                                    <div class="form-row number_movers-form-row row-moving hide">
+                                        <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                               placeholder="" name="obj[data][number_movers]" type="number" id="number_movers"
+                                               autocomplete="off">
+                                        <label for="number_movers" class="label">Number of movers</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                    <div class="form-row number_helpers-form-row hide row-delivery">
+                                        <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                               placeholder="" name="obj[data][number_helpers]" type="number" id="number_helpers"
+                                               autocomplete="off">
+                                        <label for="number_helpers" class="label">Number of helpers</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                    <div class="form-row number_workers-form-row hide row-cleaning">
+                                        <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                               placeholder="" name="obj[data][number_workers]" type="number" id="number_workers"
+                                               autocomplete="off">
+                                        <label for="number_workers" class="label">Number of workers</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>Work duration </p>
+                            <div class="row">
+                                <div class="p-2">
+                                    <div class="form-row duration_hours-form-row active">
+                                        <label for="duration_hours" class="label">Hours</label>
+                                        <select class="custom-select custom-select-lg" name="obj[data][duration_hours]"
+                                                id="duration_hours">
+                                            <option disabled value="" selected>Hours</option>
+
+                                            <option value="1">1 hour</option>
+                                            <option value="2">2 hours</option>
+                                            <option value="3">3 hours</option>
+                                            <option value="4">4 hours</option>
+                                            <option value="5">5 hours</option>
+                                            <option value="6">6 hours</option>
+                                            <option value="7">7 hours</option>
+                                            <option value="8">8 hours</option>
+                                            <option value="9">9 hours</option>
+                                            <option value="10">10 hours</option>
+                                            <option value="11">11 hours</option>
+                                            <option value="12">12 hours</option>
+                                        </select>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                </div>
+                                <div class="p-2">
+                                    <div class="form-row duration_minutes-form-row active">
+                                        <label for="duration_minutes" class="label">Minutes</label>
+                                        <select class="custom-select custom-select-lg" name="obj[data][duration_minutes]"
+                                                id="duration_minutes">
+                                            <option selected="selected" value="0">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+
+                                        </select>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row extra_charges-form-row" >
+                                <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                       placeholder="" name="obj[data][extra_charges]" type="number"
+                                       id="extra_charges" autocomplete="off">
+                                <label for="extra_charges" class="label"> Extra charges, $ </label>
+                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                            </div>
+                            <div class="form-row">
+                                <textarea placeholder="Extra charges description" id="extra_charges_text" name="obj[data][extra_charges_text]" rows="5" wrap="soft" class="textarea"></textarea>
+                                <label for="extra_charges_text">Extra charges description</label>
+                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                            </div>
+
+                        </div>
+                        <div class="">
+                            <button class="btn" id="preview_finalize">Preview</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="popup_bottom2">
+            </div>
+        </div>
+    </div>
+    <div class="side-menu__bg_popup2" style="z-index: 34"></div>
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/services.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+<script>
+</script>
+
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="container-small">
+        <div class="services-container custom-padding">
+            <form action="" id="waste-order-form">
+                <input type="text" class="hidden-object" value="waste-truck" name="obj[data][service_type]">
+
+                <div class="waste-step1">
+                    <div class="select-date">
+                        <h4 class="contains-image">
+                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar-days" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                 class="svg-inline--fa fa-calendar-days">
+                                <path fill="#39b54a"
+                                      d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 248H128V192H48V248zM48 296V360H128V296H48zM176 296V360H272V296H176zM320 296V360H400V296H320zM400 192H320V248H400V192zM400 408H320V464H384C392.8 464 400 456.8 400 448V408zM272 408H176V464H272V408zM128 408H48V448C48 456.8 55.16 464 64 464H128V408zM272 192H176V248H272V192z"
+                                      class=""></path>
+                            </svg>
+                            Specify the date of removing the building waste
+                        </h4>
+                        <div class="form">
+                            <div class="row">
+                                <div class="p-3">
+                                    <div class="form-row dateType-form-row active">
+                                        <label for="dateType" class="label">Date type *</label>
+                                        <select class="custom-select custom-select-lg"
+                                                name="obj[data][date_type]" id="dateType">
+                                            <option value="date" selected="">Exact date</option>
+                                            <option value="range">Range</option>
+                                        </select>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="form-row dateS-form-row" id="date-one">
+                                        <label for="dateS" class="label">Date*</label>
+                                        <input class="all-cback-inp requiredFill" value="" placeholder=""
+                                               name="obj[data][date]" autocomplete="off" type="text"
+                                               id="dateS">
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                    <div id="date-range" class="hide">
+                                        <div class="form-row">
+                                            <label for="date-start" class="label">Date from*</label>
+                                            <input class="all-cback-inp requiredFill" value="" placeholder=""
+                                                   name="obj[data][date_from]" autocomplete="off" type="text"
+                                                   id="date-start">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                        </div>
+                                        <span>to</span>
+                                        <div class="form-row">
+                                            <label for="date-end" class="label">Date to*</label>
+                                            <input class="all-cback-inp requiredFill" value="" placeholder=""
+                                                   name="obj[data][date_to]" autocomplete="off" type="text"
+                                                   id="date-end">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="form-row timeType-form-row active">
+                                        <label for="timeType" class="label">Time *</label>
+                                        <select class="custom-select custom-select-lg requiredFill"
+                                                name="obj[data][time]" id="timeType">
+                                            <option value="" disabled selected>Time</option>
+                                            <option value="00:00">00:00</option>
+                                            <option value="01:00">01:00</option>
+                                            <option value="02:00">02:00</option>
+                                            <option value="03:00">03:00</option>
+                                            <option value="04:00">04:00</option>
+                                            <option value="05:00">05:00</option>
+                                            <option value="06:00">06:00</option>
+                                            <option value="07:00">07:00</option>
+                                            <option value="08:00">08:00</option>
+                                            <option value="08:00">08:00</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="16:00">16:00</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="20:00">20:00</option>
+                                            <option value="21:00">21:00</option>
+                                            <option value="22:00">22:00</option>
+                                            <option value="23:00">23:00</option>
+
+                                        </select>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="location-info ">
+                        <h4 class="contains-image mb-20">
+                            <svg data-v-1ac2920b="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-location-dot" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-map-location-dot">
+                                <path data-v-1ac2920b="" fill="#39b54a" d="M408 120C408 174.6 334.9 271.9 302.8 311.1C295.1 321.6 280.9 321.6 273.2 311.1C241.1 271.9 168 174.6 168 120C168 53.73 221.7 0 288 0C354.3 0 408 53.73 408 120zM288 152C310.1 152 328 134.1 328 112C328 89.91 310.1 72 288 72C265.9 72 248 89.91 248 112C248 134.1 265.9 152 288 152zM425.6 179.8C426.1 178.6 426.6 177.4 427.1 176.1L543.1 129.7C558.9 123.4 576 135 576 152V422.8C576 432.6 570 441.4 560.9 445.1L416 503V200.4C419.5 193.5 422.7 186.7 425.6 179.8zM150.4 179.8C153.3 186.7 156.5 193.5 160 200.4V451.8L32.91 502.7C17.15 508.1 0 497.4 0 480.4V209.6C0 199.8 5.975 190.1 15.09 187.3L137.6 138.3C140 152.5 144.9 166.6 150.4 179.8H150.4zM327.8 331.1C341.7 314.6 363.5 286.3 384 255V504.3L192 449.4V255C212.5 286.3 234.3 314.6 248.2 331.1C268.7 357.6 307.3 357.6 327.8 331.1L327.8 331.1z" class=""></path></svg>
+                            Location
+                        </h4>
+                        <div class="form card-moving-to nd">
+                            <input type="text" class="hidden-object" aria-hidden="true" id="destination_latlng">
+                            <div class="address-to-list hide"></div>
+                            <input type="text" class="hidden-object" name="obj[data][address_to]"
+                                   id="addressToinput">
+                            <div class="row">
+                                <div class="p-3">
+                                    <div class="form-row">
+                                        <input class="all-cback-inp requiredFill-js" value="" required="" placeholder="" name="obj[data][destinationAddr]" type="text" id="destinationAddr">
+                                        <label for="destinationAddr" class="label">Address *</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="form-row">
+                                        <input class="all-cback-inp requiredFill-js" value="" required="" placeholder="" name="obj[data][postal_to]" type="text" id="postalTo">
+                                        <label for="postalTo" class="label">Postal code *</label>
+
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="additional-info">
+                        <h4 class="mb-20">Additional details</h4>
+                        <div class="form">
+                            <div class="form-row">
+                        <textarea placeholder="Add additional details here" id="additionalInfoInp"
+                                  name="obj[data][additionalInfo]" rows="5" wrap="soft"
+                                  class="textarea"></textarea>
+                                <label>Add additional details here</label>
+                                <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                            </div>
+                            <div class="images-uploader-block">
+                                <div class="form-row ">
+                                    <label for="file-input" class="no-label file-label">+Add pictures</label>
+                                    <div class=""></div>
+                                    <input multiple data-max_length="5" accept="image/*" id="file-input" class="upload__inputfile hidden-object" name="obj[data][images]" type="file">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                </div>
+                                <div class="photo-preview mb-40" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="person-info">
+                        <h4 class="contains-image mb-20">
+                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user">
+                                <path fill="#39b54a"
+                                      d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"
+                                      class=""></path>
+                            </svg>
+                            Contact information
+                        </h4>
+                        <div class="person-info-row form">
+                            <div class="row">
+                                <div class="p-3">
+                                    <div class="form-row name-form-row">
+                                        <input class="all-cback-inp" value="username" readonly placeholder="" name="obj[data][name]"
+                                               type="text" id="firstName">
+                                        <label for="firstName" class="label">Name*</label>
+
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="form-row">
+                                        <input class="all-cback-inp" value="4444444444" readonly placeholder="phone" name="obj[data][phone]"
+                                               type="text" id="phone">
+                                        <label for="phone" class="label">Phone*</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                </div>
+                                <div class="p-3">
+                                    <div class="form-row">
+                                        <input class="all-cback-inp" value="skyrimhelmod@gmail.com" readonly="readonly"
+                                               placeholder="email" name="obj[data][email]" type="email" id="email">
+                                        <label for="email" class="label">Email*</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btns-row">
+                        <button type="button" class="btn" id="goPreviewWaste">Preview</button>
+                    </div>                </div>
+            </form>
+        </div>
+        <div class="preview-services hide">
+            <div class="preview-container custom-padding">
+                <button class="print btn" id="print"><img src="./images/print.svg" alt="print">Print</button>
+                <h2 class="page-title">Review and send your request</h2>
+                <h4 class="contains-image mb-20">
+                    <svg data-v-2c8ac7f7="" aria-hidden="true" focusable="false" data-prefix="far"
+                         data-icon="calendar-days" role="img" xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 448 512" class="svg-inline--fa fa-calendar-days">
+                        <path data-v-2c8ac7f7="" fill="#39b54a"
+                              d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 248H128V192H48V248zM48 296V360H128V296H48zM176 296V360H272V296H176zM320 296V360H400V296H320zM400 192H320V248H400V192zM400 408H320V464H384C392.8 464 400 456.8 400 448V408zM272 408H176V464H272V408zM128 408H48V448C48 456.8 55.16 464 64 464H128V408zM272 192H176V248H272V192z"
+                              class=""></path>
+                    </svg>
+                    Review
+                </h4>
+
+                <div class="prev-address">
+                    <div class="google-map">
+                        <div id="map"></div>
+                    </div>
+                    <div class="addr-text">
+                        <div class="destination-container">
+                            <div class="flex">
+                                <div class="edit-btn">
+                                    <button type="button"><img src="./images/edit.svg" alt="">Edit</button>
+                                </div>
+                                <div class="addr-text-item-img">
+                                    <img src="./images/moving_to.svg" alt="moving_to">
+                                </div>
+                                <h4>Cleaning</h4>
+
+                            </div>
+
+                            <div class="waste-service-info">
+
+                                <p><strong>Date:</strong> <span id="datePreview"></span></p>
+                                <p><strong>Time: </strong><span id="timePreview"></span></p>
+                                <div id="moving_to_preview"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="flex items-center mb-20">Additional information
+                    <button class="edit" type="button"><img src="./images/edit.svg" alt="edit">Edit</button>
+                </h4>
+                <div class="card-tips" id="additionalDetailsBlock">
+                    <div class="card-t-title">
+                        <p>Customer Note</p>
+                    </div>
+                    <div class="card-t-content" id="customer-note-preview">
+                    </div>
+                </div>
+                <div class="card-tips">
+                    <div class="card-t-title">
+                        <p>Customer info</p>
+                    </div>
+                    <div class="card-t-content">
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>Full name *:</p>
+                            <p id="fullnamePreview"></p>
+                        </div>
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>
+                                Phone number *:
+                            </p>
+                            <p id="phoneNumberPreview">
+
+                            </p>
+                        </div>
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>
+                                Email *:
+                            </p>
+                            <p id="emailPreview"></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <h4 class="flex items-center mb-20">
+                    Photos
+                    <button class="edit" type="button"><img src="./images/edit.svg" alt="edit">Edit</button>
+                </h4>
+                <div class="photos-preview" id="photos-preview">
+
+                </div>
+                <h4 class="flex items-center mb-20">
+                    Contact information
+                    <button class="edit" type="button"><img src="./images/edit.svg" alt="edit">Edit</button>
+                </h4>
+                <p class="mb-20"><strong>Phone:</strong> <span id="contactInfoPhonePreview"></span> (will not be shown on the website)</p>
+                <p class="mb-20"><strong>Email:</strong><span id="contactInfoEmailPreview"></span>  (will not be shown on the website)
+                </p>
+                <div class=""></div>
+                <div class="btns-row">
+                    <a href="" id="sendForm" class="btn big-btn">Send</a>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/vars.js"></script>
+<script src="./js/googlemap.js"></script>
+<script src="./js/services-waste.js"></script> - optional
+//google api
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwiUJfNYOssvARiVlNspEPt36YXzyP_c&callback=initMap&libraries=places&v=weekly,places&ext,geometry" defer></script>
+

@@ -1,0 +1,147 @@
+footer{
+  h1,h2,h3,h4,h5,h6,span,a,p{
+    font-family: Calibri!important;
+
+  }
+  background-color: #5a5a5a;
+  color: #fff;
+  a,ul,li,p{
+    color: white;
+  }
+}
+.foo-c {
+  max-width: 1540px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  .foo-c-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+  }
+
+  .foo-c-2 {
+    width: 23%;
+  }
+
+  .foo-c-3 {
+    p{
+      text-align: right;
+    }
+    width: 17%;
+  }
+}
+
+.foo-c-all {
+  p {
+
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 25px;
+    span{
+      font-size: 1.3em;
+      font-weight: bold;
+      display: block;
+    }
+  }
+
+  ul {
+    li {
+      margin-bottom: 13px;
+
+      a {
+        color: white;
+        font-size: 19px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.foo-c-1 {
+  ul {
+    max-width: 660px;
+    column-count: 3;
+  }
+}
+
+.foo-b {
+
+  max-width: 1020px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+  }
+
+  a {
+    margin-right: 20px;
+    color: white;
+    font-size: 14px;
+  }
+}
+
+.socials-icons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: flex-end;
+
+  a {
+    margin-left: 7px;
+  }
+}
+
+.socials-icons a:hover, .socials-icons a:focus {
+  opacity: .7;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+
+.socials-icons img {
+  height: 22px;
+  width: auto;
+}
+
+@media screen and (max-width: 850px) {
+  .foo-c-1 ul {
+    column-count: 2;
+  }
+  .foo-c .foo-c-3{
+    min-width: 140px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .foo-c-1 ul {
+    column-count: 1;
+  }
+  .foo-c{
+    flex-wrap: wrap;
+  }
+  .foo-c .foo-c-1{
+    width: 50%;
+  }
+  .foo-c .foo-c-2{
+    width: 50%;
+  }
+  .foo-c .foo-c-3{
+    margin-top: 40px;
+    width: 100%;
+  }
+}

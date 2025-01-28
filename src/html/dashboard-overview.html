@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+</head>
+<script>
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="dashboard">
+        <div class="d-menu active">
+            <div class="toggle-d-menu">
+                <button><img src="/images/menu-d.svg" alt="open"></button>
+                <button><img src="/images/arrow-left.svg" alt="close"></button>
+            </div>
+            <ul>
+                <li class="active"><a href=""><img src="/images/overview.svg" alt="Overview">Overview</a></li>
+                <li><a href=""><img src="/images/overview.svg" alt="Agenda">Agenda</a></li>
+                <li><a href=""><img src="/images/overview.svg" alt="Orders">Orders</a></li>
+                <li><a href=""><img src="/images/overview.svg" alt="Payments">Payments</a></li>
+                <li><a href=""><img src="/images/overview.svg" alt="Invoices">Invoices</a></li>
+                <li><a href=""><img src="/images/overview.svg" alt="Feedbacks">Feedbacks</a></li>
+            </ul>
+        </div>
+        <div class="d-content">
+            <div class="d-overview container-small">
+                <div class="row row-1">
+                    <div class="p-2">
+                        <h3 class="page-title">EXPERT DOMUS</h3>
+                        <div class="rating-block">
+                        <div class="rating" data-rate="100">
+                            <span class="rateStarPopup active"></span>
+                            <span class="rateStarPopup active"></span>
+                            <span class="rateStarPopup active"></span>
+                            <span class="rateStarPopup active"></span>
+                            <span class="rateStarPopup active"></span>
+                        </div>
+                            <span>5.0 (0)</span>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                       <p> Completed:   <span>0</span> contracts for <span>0.00$</span></p>
+                        <p>Contracts in progress: <span>0</span></p>
+                    </div>
+                </div>
+                <div class="row row-2">
+                    <div class="p-3">
+                        <div class="statistic-card" style="background: #007bff">
+                                    <div class="statistic-card-title">To move</div>
+                                    <div class="statistic-card-content">
+                                        <div class="s-ico">
+                                            <img src="/images/van.svg" alt="move">
+                                        </div>
+                                        <p>0</p>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="statistic-card">
+                            <div class="statistic-card-title">To finalize</div>
+                            <div class="statistic-card-content">
+                                <div class="s-ico">
+                                    <img src="/images/finish.svg" alt="finalize">
+                                </div>
+                                <p>0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="statistic-card" style="background: #39b54a">
+                            <div class="statistic-card-title">To pay</div>
+                            <div class="statistic-card-content">
+                                <div class="s-ico">
+                                    <img src="/images/credit-card.svg" alt="pay">
+                                </div>
+                                <p>0 Bills</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @@include('blocks/footer.html')

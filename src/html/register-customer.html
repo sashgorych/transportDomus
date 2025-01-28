@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/auth.css">
+
+</head>
+<script>
+    var emailErrorLength = "The email field is required"
+    var emailErrorValid = "The email field must be a valid email"
+    var firstnameErrorLength = "The first name field is required"
+    var lastnameErrorLength = "The last name field is required"
+    var phoneErrorValid = "Enter phone correctly"
+    var passwordErrorValid = "The password field is required"
+    var passwordErrorEqual = "passwords must be equal"
+    var authError = "Wrong email of password."
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+
+    <div class="container">
+        <div class="auth-container">
+            <div class="registration-container">
+                <div class="customer-reg">
+                    <div class="form-card">
+                        <h2>Customer registration</h2>
+                        <form action="" class="registerform" id="registerformPerson">
+                            <input type="text" name="obj[data][userType]" id="userType" class="hidden-object" value="customer">
+                            <div class="form">
+                                <div class="images-uploader-block">
+                                    <div class="form-row insurance-form-row">
+                                        <span class="label-normal">Upload driver's license or passport with your photo and name (PDF, JPG, PNG) and no more than 4 MB*</span>
+                                        <label for="file-input" class="no-label file-label">+Add pictures</label>
+                                        <input data-max_length="1" accept="image/*, application/pdf" id="file-input" class="upload__inputfile hidden-object" name="obj[data][verificationFile]" type="file">
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                    <div class="photo-preview mb-40"></div>
+                                </div>
+
+                                <fieldset class="form-group">
+                                    <div role="radiogroup" tabindex="-1" class="bv-no-focus-ring">
+                                        <div class="custom-control custom-control-inline custom-radio">
+                                            <input type="radio" checked name="obj[data][businessType]" class="custom-control-input" value="individual" id="cus_individual_inp">
+                                            <label class="custom-control-label" for="cus_individual_inp">Individual</label>
+                                        </div>
+                                        <div class="custom-control custom-control-inline custom-radio">
+                                            <input type="radio" name="obj[data][businessType]" class="custom-control-input" value="company" id="cus_company_inp">
+                                            <label class="custom-control-label" for="cus_company_inp">Company</label>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <div class="row row-private hide">
+                                    <div class="p-2">
+                                        <div class="form-row firstname-form-row">
+                                            <label for="firstName" class="label">First name*</label>
+                                            <input class="all-cback-inp" value="" placeholder="" name="obj[data][name]" type="text" id="firstName" autocomplete="given-name" autocompletetype="given-name">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The first name field is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="form-row lastname-form-row">
+                                            <label for="lastName" class="label">Last name*</label>
+                                            <input class="all-cback-inp" value="" placeholder="" name="obj[data][lastname]" type="text" id="lastName" autocomplete="family-name" autocompletetype="family-name">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The last name field is required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-company hide">
+                                    <div class="p-2">
+                                        <div class="form-row company_name-form-row">
+                                            <label for="company_name" class="label">Company name*</label>
+                                            <input class="all-cback-inp" value="" placeholder="" name="obj[data][company_name]" type="text" id="company_name" autocomplete="off">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="form-row company_address-form-row">
+                                            <label for="lastName" class="label">Address*</label>
+                                            <input class="all-cback-inp" value="" placeholder="" name="obj[data][company_address]" type="text" id="company_address" autocomplete="off">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row email-form-row">
+                                    <label for="email" class="label">Email*</label>
+                                    <input class="all-cback-inp" value="" placeholder="" name="obj[data][email]" type="email" id="email" autocomplete="email" autocompletetype="email">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*Enter email correctly</span>
+
+                                </div>
+                                <div class="form-row phone-form-row">
+                                    <label for="phone" class="label">Phone number*</label>
+                                    <input class="all-cback-inp not-phone-mask" value="" placeholder="" name="obj[data][phone]" id="phone" type="tel" autocomplete="tel-local" autocompletetype="tel-local">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*Enter phone correctly</span>
+
+                                </div>
+                                <div class="form-row password-form-row">
+                                    <label for="password" class="label">Password *</label>
+                                    <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]" type="password" id="password">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                                </div>
+                                <div class="form-row password-repeat-form-row">
+                                    <label for="password" class="label">Repeat Password*</label>
+                                    <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]" type="password" id="password-check">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                                </div>
+
+
+                            </div>
+                            <div class="form-outro">
+                               <span class="small">Domus collects your data for the purpose of creating and managing your account. Learn more about <a
+                                       href="/">data protection policies</a>.</span>
+                                <span class="small">
+                                    By registering on Domus, you agree to our <a href="/">terms and conditions</a>.
+                                </span>
+                            </div>
+                            <div class="btn-row">
+                                <a href="" class="d-block" id="go-back-auth">Previous</a>
+                                <button type="submit" class="btn">Sign up</button>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/auth.js"></script>

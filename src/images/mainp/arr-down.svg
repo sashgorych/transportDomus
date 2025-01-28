@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="10" viewBox="0 0 21 10">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 104px;
+        fill: #5e6163;
+        text-anchor: middle;
+        font-family: Calibri;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <text id="_" data-name="&gt;" class="cls-1" transform="matrix(0, 0.192, -0.419, 0, -1.931, 5.21)"><tspan x="0">&gt;</tspan></text>
+</svg>

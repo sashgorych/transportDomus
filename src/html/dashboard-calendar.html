@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/calendar-dash.css">
+
+</head>
+<script>
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="dashboard">
+        <div class="d-menu active">
+            <div class="toggle-d-menu">
+                <button><img src="./images/menu-d.svg" alt="open"></button>
+                <button><img src="./images/arrow-left.svg" alt="close"></button>
+            </div>
+            <ul>
+                <li class=""><a href=""><img src="./images/overview.svg" alt="Overview">Overview</a></li>
+                <li class="active"><a href=""><img src="./images/overview.svg" alt="Agenda">Agenda</a></li>
+                <li><a href=""><img src="./images/overview.svg" alt="Orders">Orders</a></li>
+                <li><a href=""><img src="./images/overview.svg" alt="Payments">Payments</a></li>
+                <li><a href=""><img src="./images/overview.svg" alt="Invoices">Invoices</a></li>
+                <li><a href=""><img src="./images/overview.svg" alt="Feedbacks">Feedbacks</a></li>
+            </ul>
+        </div>
+        <div class="d-content">
+            <div class="small-container d-agenda">
+                <div class="calendar-change">
+                    <button id="goMonthCalendar"><span>Month</span></button>
+                    <button id="goWeekCalendar" class="active"><span>Week</span></button>
+                </div>
+                <div class="calendar2" id="week-calendar">
+
+                    <div class="col-md-12">
+                        <div class="bt-calendar weekly-layout">
+                            <div class="calendar-wrapper">
+                                <div class="calendar-table">
+                                    <div class="calendar-month-zone">
+                                        <div class="btns-c">
+                                            <div class="prev-btn">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </div>
+                                        </div>
+                                        <div class="month">Week <span id="week_number"></span></div>
+                                        <div class="btns-c">
+
+                                                                                   <div class="next-btn">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="weekdays">
+                                        <li class="" data-weekday="1">
+                                            <span class="week-day-item">Monday</span>
+                                            <span class="day-item">1</span>
+                                        </li>
+                                        <li data-weekday="2" class="">
+                                            <span class="week-day-item">Tuesday</span>
+                                            <span class="day-item">2</span>
+                                        </li>
+                                        <li data-weekday="3" class="">
+                                            <span class="week-day-item">Wednesday</span>
+                                            <span class="day-item">3</span>
+                                        </li>
+                                        <li data-weekday="4" class="">
+                                            <span class="week-day-item">Thursday</span>
+                                            <span class="day-item">4</span>
+                                        </li>
+                                        <li data-weekday="5" class="">
+                                            <span class="week-day-item">Friday</span>
+                                            <span class="day-item">5</span>
+                                        </li>
+                                        <li data-weekday="6" class="">
+                                            <span class="week-day-item">Saturday</span>
+                                            <span class="day-item">6</span>
+                                        </li>
+                                        <li data-weekday="0" class="">
+                                            <span class="week-day-item">Sunday</span>
+                                            <span class="day-item">7</span>
+                                        </li>
+                                    </ul>
+                                    <ul class="day-time">
+                                        <li>08:00</li>
+                                        <li>09:00</li>
+                                        <li>10:00</li>
+                                        <li>11:00</li>
+                                        <li>12:00</li>
+                                        <li>13:00</li>
+                                        <li>14:00</li>
+                                        <li>15:00</li>
+                                        <li>16:00</li>
+                                        <li>17:00</li>
+                                        <li>18:00</li>
+                                        <li>19:00</li>
+                                        <li>20:00</li>
+                                        <li>21:00</li>
+                                        <li>22:00</li>
+                                        <li>23:00</li>
+                                        <li>00:00</li>
+                                        <li>01:00</li>
+                                        <li>02:00</li>
+                                        <li>03:00</li>
+                                        <li>04:00</li>
+                                        <li>05:00</li>
+                                        <li>06:00</li>
+                                        <li>07:00</li>
+                                    </ul>
+                                    <ul class="days">
+                                        <li data-weekday="1">
+                                            <ul>
+                                                <li data-time="8.00"></li>
+                                                <li data-time="9.00"></li>
+                                                <li></li>
+                                                <li data-time="10.00">
+                                                    <div class="li-in">
+                                                        <div class="cell-order-cout">
+                                                            <span>2</span>
+                                                        </div>
+                                                        <div class="single-event close">
+                                                            <span class="event-title">Order #158569</span>
+                                                            <span>Status: in progress</span>
+                                                            <span class="event-time">Time: 10:00 - 11:00</span>
+                                                            <span class="event-repetition"></span>
+                                                            <span class="event-recurrence"></span>
+                                                            <div class="btns-row">
+                                                                <a href="/show-requests?id=158569" target="_blank" class="btn-more-info">More Info</a>
+                                                                <a href="/finalize/orderid" class="btn-more-fin" target="_blank" data-ind="1">Finalize</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li data-time="11.00"></li>
+                                                <li data-time="12.00"></li>
+                                                <li data-time="13.00"></li>
+                                                <li data-time="14.00"></li>
+                                                <li data-time="15.00"></li>
+                                                <li data-time="16.00"></li>
+                                                <li data-time="17.00"></li>
+                                                <li data-time="18.00"></li>
+                                                <li data-time="19.00"></li>
+                                                <li data-time="20.00"></li>
+                                            </ul>
+                                        </li>
+                                        <li data-weekday="2">
+                                            <ul>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                        </li>
+                                        <li data-weekday="3">
+                                            <ul>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                        </li>
+                                        <li data-weekday="4">
+                                            <ul>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                        </li>
+                                        <li data-weekday="5">
+                                            <ul>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                        </li>
+                                        <li data-weekday="6">
+                                            <ul>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                        </li>
+                                        <li data-weekday="0">
+                                            <ul>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar hide" id="month-calendar">
+                    <div class="c-header">
+                        <div class="btns-c">
+                            <div class="prev-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                        </div>
+                        <div class="month">January 2024</div>
+                        <div class="btns-c">
+<!--                            <div class="btn today-btn">-->
+<!--                                <i class="fas fa-calendar-day"></i>-->
+<!--                            </div>-->
+
+                            <div class="next-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weekdays">
+                        <div class="day">Sun</div>
+                        <div class="day">Mon</div>
+                        <div class="day">Tue</div>
+                        <div class="day">Wed</div>
+                        <div class="day">Thu</div>
+                        <div class="day">Fri</div>
+                        <div class="day">Sat</div>
+                    </div>
+                    <div class="days">
+                    </div>
+                </div>
+            </div>
+            <div class="default_popup2 temp_popups" id="finalize-order" style="z-index:35">
+                <div class="popup_close2">
+                    <div class="icon-close2"><span></span></div>
+                </div>
+                <div class="popup_body2 default-text">
+                    <div class="popup_title2">
+                        <p class="h5">Create invoice for request #<span id="finalize-text-order_id"></span> <span id="finalize-service_type"></span></p>
+                    </div>
+                    <div class="popup_content2">
+                        <div class="make-bid-content">
+                            <form action="" id="finalize-form">
+                                <input type="hidden" id="customer_id" name="obj[data][user_id]">
+                                <input type="hidden" id="order_id" name="obj[data][order_id]">
+                                <input type="hidden" id="service_type" name="obj[data][service_type]">
+                                <div class="form">
+                                    <div class="row">
+                                        <div class="p-2">
+                                            <div class="form-row">
+                                                <input class="all-cback-inp pac-target-input" value="customer_name123"
+                                                       placeholder="" name="obj[data][customer_name]" readonly type="text" id="customer_name"
+                                                       autocomplete="off">
+                                                <label for="customer_name" class="label">Customer name</label>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>Payment</p>
+                                    <div class="row">
+                                        <div class="p-2">
+                                            <div class="form-row hour_cost-form-row hide">
+                                                <input class="all-cback-inp pac-target-input no-arrows" readonly value=""
+                                                       placeholder="" name="obj[data][hour_cost]" type="text" id="hourly_cost"
+                                                       autocomplete="off">
+                                                <label for="hourly_cost" class="label">Hourly cost, for 1 hour, $</label>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                            </div>
+                                            <div class="form-row fixed_payment-form-row hide">
+                                                <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                                       placeholder="" name="obj[data][fixed_payment]" readonly type="text"
+                                                       id="fixed_cost" autocomplete="off">
+                                                <label for="fixed_cost" class="label">Fixed price, $</label>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                            </div>
+                                            <div class="form-row transportation_cost-form-row hide" >
+                                                <input class="all-cback-inp pac-target-input no-arrows" readonly value=""
+                                                       placeholder="" name="obj[data][transportation_cost]" type="text"
+                                                       id="transportation_cost" autocomplete="off">
+                                                <label for="transportation_cost" class="label">Travel expenses, $ </label>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p>Quote info </p>
+                                    <div class="row">
+                                        <div class="p-2">
+                                            <div class="form-row number_movers-form-row row-moving hide">
+                                                <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                                       placeholder="" name="obj[data][number_movers]" type="number" id="number_movers"
+                                                       autocomplete="off">
+                                                <label for="number_movers" class="label">Number of movers</label>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                            </div>
+                                            <div class="form-row number_helpers-form-row hide row-delivery">
+                                                <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                                       placeholder="" name="obj[data][number_helpers]" type="number" id="number_helpers"
+                                                       autocomplete="off">
+                                                <label for="number_helpers" class="label">Number of helpers</label>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                            </div>
+                                            <div class="form-row number_workers-form-row hide row-cleaning">
+                                                <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                                       placeholder="" name="obj[data][number_workers]" type="number" id="number_workers"
+                                                       autocomplete="off">
+                                                <label for="number_workers" class="label">Number of workers</label>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p>Work duration </p>
+                                    <div class="row">
+                                        <div class="p-2">
+                                            <div class="form-row duration_hours-form-row active">
+                                                <label for="duration_hours" class="label">Hours</label>
+                                                <select class="custom-select custom-select-lg" name="obj[data][duration_hours]"
+                                                        id="duration_hours">
+                                                    <option disabled value="" selected>Hours</option>
+
+                                                    <option value="1">1 hour</option>
+                                                    <option value="2">2 hours</option>
+                                                    <option value="3">3 hours</option>
+                                                    <option value="4">4 hours</option>
+                                                    <option value="5">5 hours</option>
+                                                    <option value="6">6 hours</option>
+                                                    <option value="7">7 hours</option>
+                                                    <option value="8">8 hours</option>
+                                                    <option value="9">9 hours</option>
+                                                    <option value="10">10 hours</option>
+                                                    <option value="11">11 hours</option>
+                                                    <option value="12">12 hours</option>
+                                                </select>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                            </div>
+                                        </div>
+                                        <div class="p-2">
+                                            <div class="form-row duration_hours-form-row active">
+                                                <label for="duration_hours" class="label">Minutes</label>
+                                                <select class="custom-select custom-select-lg" name="obj[data][duration_minutes]"
+                                                        id="duration_minutes">
+                                                    <option selected="selected" value="0">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+
+                                                </select>
+                                                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row transportation_cost-form-row" >
+                                        <input class="all-cback-inp pac-target-input no-arrows" value=""
+                                               placeholder="" name="obj[data][extra_charges]" type="number"
+                                               id="extra_charges" autocomplete="off">
+                                        <label for="extra_charges" class="label"> Extra charges, $ </label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                    <div class="form-row">
+                                        <textarea placeholder="Extra charges description" id="extra_charges_text" name="obj[data][extra_charges_text]" rows="5" wrap="soft" class="textarea"></textarea>
+                                        <label for="extra_charges_text">Extra charges description</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+
+                                </div>
+                                <div class="">
+                                    <button class="btn" id="preview_finalize">Preview</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="popup_bottom2">
+                    </div>
+                </div>
+            </div>
+            <div class="side-menu__bg_popup2" style="z-index: 34"></div>
+        </div>
+    </div>
+
+</div>
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/datepicker-full.min.js"></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type='text/javascript' src='./js/main.js'></script>
+    <script type='text/javascript' src='./js/vars.js'></script>
+    <script src="./js/calendar-dash.js"></script>
+
+{
+"obj[data][order_id]": "",
+"obj[data][service_type]": "",
+"obj[data][customer_name]": "",
+"obj[data][hour_cost]": "",
+"obj[data][fixed_payment]": "",
+"obj[data][transportation_cost]": "",
+"obj[data][number_movers]": "",
+"obj[data][number_helpers]": "",
+"obj[data][number_workers]": "",
+"obj[data][duration_hours]": "",
+"obj[data][duration_minutes]": "",
+"obj[data][extra_charges]": "",
+"obj[data][extra_charges_text]": ""
+}

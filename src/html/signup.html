@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/auth.css">
+
+</head>
+<script>
+    var emailErrorLength = "The email field is required"
+    var emailErrorValid = "The email field must be a valid email"
+    var firstnameErrorLength = "The first name field is required"
+    var lastnameErrorLength = "The last name field is required"
+    var phoneErrorValid = "Enter phone correctly"
+    var passwordErrorValid = "The password field is required"
+    var passwordErrorEqual = "passwords must be equal"
+    var authError = "Wrong email of password."
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+
+    <div class="container">
+        <div class="auth-container">
+            <div class="registration-container">
+                <h2 class="text-center h1">What is your situation?</h2>
+                <div class="auth-list">
+                    <a href="" class="reg-card-item">
+                        <span class="card-body">
+                            <h5 class="card-title">Customer</h5>
+                            <p class="card-text">I’d need moving quotes</p>
+                        </span>
+                        <span class="card-arrow">
+                            <img src="./images/arrow_scroll_right.svg" alt="go">
+                        </span>
+                    </a>
+                    <a href="" class="reg-card-item">
+                        <span class="card-body">
+                            <h5 class="card-title">Driver</h5>
+                            <p class="card-text">Find delivery requests, get contracts</p>
+                        </span>
+                        <span class="card-arrow">
+                            <img src="./images/arrow_scroll_right.svg" alt="go">
+                        </span>
+                    </a>
+                    <a href="" class="reg-card-item">
+                        <span class="card-body">
+                            <h5 class="card-title">Cleaner</h5>
+                            <p class="card-text">Find cleaning requests, get contracts</p>
+                        </span>
+                        <span class="card-arrow">
+                            <img src="./images/arrow_scroll_right.svg" alt="go">
+                        </span>
+                    </a>
+                    <a href="" class="reg-card-item">
+                        <span class="card-body">
+                            <h5 class="card-title">Mover</h5>
+                            <p class="card-text">Find moving requests, get contracts</p>
+                        </span>
+                        <span class="card-arrow">
+                            <img src="./images/arrow_scroll_right.svg" alt="go">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/auth.js"></script>

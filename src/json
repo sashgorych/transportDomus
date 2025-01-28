@@ -1,0 +1,471 @@
+let itemList = {
+    "lang": "en",
+    "items_category": [
+        {
+            "category_name":"seat",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"seat-1",
+                    "name":"Armchair"
+                },
+                {
+                    "uniq_id":"seat-2",
+                    "name":"Sofa 3-seater"
+                },
+                {
+                    "uniq_id":"seat-3",
+                    "name":"Hide-a-bed"
+                },
+                {
+                    "uniq_id":"seat-4",
+                    "name":"Loveseat"
+                },
+                {
+                    "uniq_id": "seat-5",
+                    "name": "Rocker"
+                }
+            ]
+        },
+        {
+            "category_name":"bed",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"bed-1",
+                    "name":"Bed - King"
+                },
+                {
+                    "uniq_id":"bed-2",
+                    "name":"Bed - Queen"
+                },
+                {
+                    "uniq_id":"bed-3",
+                    "name":"Bed - Double"
+                },
+                {
+                    "uniq_id":"bed-4",
+                    "name":"Bed - Single"
+                },
+                {
+                    "uniq_id":"bed-5",
+                    "name":"Electric bed"
+                },
+                {
+                    "uniq_id":"bed-6",
+                    "name":"Bunk bed"
+                },
+                {
+                    "uniq_id":"bed-7",
+                    "name":"Crib"
+                },
+                {
+                    "uniq_id":"bed-8",
+                    "name":"Baby carriage"
+                }
+            ]
+        },
+        {
+            "category_name":"kitchen_technic",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"kt-1",
+                    "name":"Refrigerator 17\" to 24\""
+                },
+                {
+                    "uniq_id":"kt-2",
+                    "name":"Refrigerator 24\" & more"
+                },
+                {
+                    "uniq_id":"kt-3",
+                    "name":"Oven - Stove"
+                },
+                {
+                    "uniq_id":"kt-4",
+                    "name":"Dishwasher"
+                },
+                {
+                    "uniq_id":"kt-5",
+                    "name":"Washer"
+                },
+                {
+                    "uniq_id":"kt-6",
+                    "name":"Dryer"
+                },
+                {
+                    "uniq_id":"kt-7",
+                    "name":"Microwave"
+                },
+                {
+                    "uniq_id":"kt-8",
+                    "name":"Built-in microwave"
+                },
+                {
+                    "uniq_id":"kt-9",
+                    "name":"Vacuum Cleaner"
+                },
+                {
+                    "uniq_id":"kt-10",
+                    "name":"Humidifier"
+                },
+                {
+                    "uniq_id":"kt-11",
+                    "name":"Air Conditioning"
+                },
+                {
+                    "uniq_id":"kt-12",
+                    "name":"Floor lamp"
+                }
+            ]
+        },
+        {
+            "category_name":"dressers",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"dressers-1",
+                    "name":"Stereo cabinet"
+                },
+                {
+                    "uniq_id":"dressers-2",
+                    "name":"Corner cabinet"
+                },
+                {
+                    "uniq_id":"dressers-3",
+                    "name":"Wardrobe wood"
+                },
+                {
+                    "uniq_id":"dressers-4",
+                    "name":"Dresser"
+                },
+                {
+                    "uniq_id":"dressers-5",
+                    "name":"China Cabinet"
+                },
+                {
+                    "uniq_id":"dressers-6",
+                    "name":"Bookshelves"
+                },
+                {
+                    "uniq_id":"dressers-7",
+                    "name":"Wooden chest"
+                },
+            ]
+        },
+        {
+            "category_name":"piano",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"piano-1",
+                    "name":"Piano upright"
+                },
+                {
+                    "uniq_id": "piano-2",
+                    "name": "Piano grand"
+                }
+            ]
+        },
+        {
+            "category_name":"table",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"table-1",
+                    "name":"Dining tables 4\' and more"
+                },
+                {
+                    "uniq_id":"table-2",
+                    "name":"Dining tables less than 4\'"
+                },
+                {
+                    "uniq_id":"table-3",
+                    "name":"Coffee table"
+                },
+                {
+                    "uniq_id":"table-4",
+                    "name":"Patio table"
+                },
+                {
+                    "uniq_id":"table-5",
+                    "name":"Marble table"
+                },
+                {
+                    "uniq_id":"table-6",
+                    "name":"End table"
+                },
+                {
+                    "uniq_id":"table-7",
+                    "name":"Night table"
+                }
+            ]
+        },
+        {
+            "category_name":"desk",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"desc-1",
+                    "name":"Small desk"
+                },
+                {
+                    "uniq_id":"desc-2",
+                    "name":"Medium desk"
+                },
+                {
+                    "uniq_id":"desc-3",
+                    "name":"Large desk"
+                }
+            ]
+        },
+        {
+            "category_name":"tv",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"tv-1",
+                    "name":"TV 36\" or less"
+                },
+                {
+                    "uniq_id":"tv-2",
+                    "name":"TV larger than 36\""
+                },
+                {
+                    "uniq_id":"tv-3",
+                    "name":"TV - console"
+                },
+                {
+                    "uniq_id":"tv-4",
+                    "name":"Computer"
+                }
+            ]
+        },
+        {
+            "category_name":"box",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"box-1",
+                    "name":"Boxes"
+                },
+                {
+                    "uniq_id":"box-2",
+                    "name":"Suitcases"
+                }
+            ]
+        },
+        {
+            "category_name":"chair",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"chair-1",
+                    "name":"Chairs"
+                },
+                {
+                    "uniq_id":"chair-2",
+                    "name":"Long chair"
+                },
+                {
+                    "uniq_id":"chair-3",
+                    "name":"Patio chair"
+                },
+                {
+                    "uniq_id":"chair-4",
+                    "name":"Rocking chair"
+                }
+            ]
+        },
+        {
+            "category_name":"outdoor",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"outdoor-1",
+                    "name":"Barbecue"
+                },
+                {
+                    "uniq_id":"outdoor-2",
+                    "name":"Lawn mower"
+                },
+                {
+                    "uniq_id":"outdoor-3",
+                    "name":"Snow blower"
+                },
+                {
+                    "uniq_id":"outdoor-4",
+                    "name":"Ladder"
+                },
+                {
+                    "uniq_id":"outdoor-5",
+                    "name":"Wading pool - child"
+                },
+                {
+                    "uniq_id":"outdoor-6",
+                    "name":"Swing"
+                }
+            ]
+        },
+        {
+            "category_name":"clock",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"clock-1",
+                    "name":"Grandfather clock"
+                },
+                {
+                    "uniq_id":"clock-2",
+                    "name":"Large carpet"
+                },
+                {
+                    "uniq_id":"clock-3",
+                    "name":"Wall units (piece)"
+                }
+            ]
+        },
+        {
+            "category_name":"safe",
+            "icon_src":"",
+            "items":[
+                {
+                    "uniq_id":"safe-1",
+                    "name":"Safe"
+                },
+                {
+                    "uniq_id":"safe-2",
+                    "name":"Gun safe"
+                },
+                {
+                    "uniq_id":"safe-3",
+                    "name":"Tool chest"
+                }
+            ]
+        }
+    ]
+}
+
+
+"[
+{
+"latlng":[48.2924827,25.9356008],
+"address":"Чернівці, Чернівецька область, Україна",
+"postal":"58000",
+"is_elevator":"false"
+},{"latlng":[48.34999999999999,25.966667],"address":"Садгора, Чернівецька область, Україна","postal":"58000","is_elevator":"false"}]"
+
+
+obj[data][service_type]: "moving" | "delivery"
+
+obj[data][date_type]: "date" || "range"
+if range
+    obj[data][date_from]: "mm/dd/yyyy"
+    obj[data][date_to]: "mm/dd/yyyy"
+if date
+    obj[data][date]: "mm/dd/yyyy"
+
+obj[data][time]: "11:00 - 12:00" string
+
+obj[data][departure_latlng]: array like "[11.825138,42.590275]"
+obj[data][accommodation_type_from]: "apartment" | "house" | "office" | "locker" string (only if service_type == moving)
+obj[data][address_from]: string
+obj[data][bedrooms_from]: string number (only if service_type == moving)
+obj[data][floor_from]: string number (only if service_type == moving)
+obj[data][elevator_from]: "false" | "true" string true false
+obj[data][postal_from]: string
+obj[data][isNeedBoxing]: "false" || "true" string true false
+
+obj[data][is_need_storage]: "false" || "true" string true false
+obj[data][bedrooms_to]: string number
+obj[data][floor_to]:  string number
+obj[data][accommodation_type_to]: "apartment" | "house" | "office" | "locker" string
+
+obj[data][additionalInfo]: string
+obj[data][address_to]: string array of objects
+[
+{
+"latlng":"[36.6112774,-121.8587726]", array numbers
+"address":"", string
+"postal":"", string
+"is_elevator":"", "false" || "true" string true false
+"accommodationType":"",  "apartment" | "house" | "office" | "locker" string
+"bedrooms":"", string number
+"floor":"" string number
+}]
+
+
+obj[data][email]: email string
+obj[data][items_to_move]: string array of objects
+                [
+                {"item_id": "", string(my id)
+                "item_category":"", string (my category)
+                "count":"" string number
+                }
+                ]
+
+obj[data][name]: string
+obj[data][phone]: string
+obj[data][upload_images]: [File] array files
+obj[data][vehicleType]: "26" | "24" | "20" | "16" | "12" |"8" | "4" string
+obj[data][needHelper]: "false" || "true" string true false
+
+
+obj[data][service_type]: "waste-truck" | "waste-container" | "waste-cleaning"
+obj[data][clearing_type]: "particular" | "commercial" string only if service_type == waste-cleaning
+
+
+obj[data][date_type]: "date" || "range"
+if range
+    obj[data][date_from]: "mm/dd/yyyy"
+    obj[data][date_to]: "mm/dd/yyyy"
+if date
+    obj[data][date]: "mm/dd/yyyy"
+
+obj[data][time]: "11:00 - 12:00" string
+
+obj[data][address_to]: string array of objects
+[
+{
+"latlng":"[36.6112774,-121.8587726]", array numbers
+"address":"", string
+"postal":"", string
+"is_elevator":"", "false" || "true" string true false
+"accommodationType":"",  "apartment" | "house" | "office" | "locker" string
+"bedrooms":"", string number
+"floor":"" string number
+}]
+
+obj[data][additionalInfo]: string
+
+obj[data][email]: email string
+obj[data][name]: string
+obj[data][phone]: string
+obj[data][upload_images]: [File] array files
+
+
+
+
+bid obj
+obj[data][bid_id]
+obj[data][fixed_payment]: ""
+obj[data][hour_cost]: "3"
+obj[data][min_hours]: "1"
+obj[data][order_id]: "000324"
+obj[data][payment_type]: "hourly" | "price"
+obj[data][transportation_cost]: "3"
+
+ "obj[data][bids]": "[
+ {
+ "obj[data][created]":"2024-06-06;12:00" ,
+ "obj[data][expert_date]":"2024-06-06",
+ "obj[data][status]":"accept" | "expect",
+ "obj[data][bid_id]":"",
+ "obj[data][fixed_payment]": "",
+ "obj[data][hour_cost]": "",
+ "obj[data][min_hours]": "",
+ "obj[data][order_id]": "",
+ "obj[data][payment_type]": "price" | "hourly",
+ "obj[data][expert_id]": "",
+ "obj[data][transportation_cost]": "",
+ }]

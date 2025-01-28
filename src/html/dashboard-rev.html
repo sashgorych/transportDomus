@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+</head>
+<script>
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="dashboard">
+        <div class="d-menu active">
+            <div class="toggle-d-menu">
+                <button><img src="/images/menu-d.svg" alt="open"></button>
+                <button><img src="/images/arrow-left.svg" alt="close"></button>
+            </div>
+            <ul>
+                <li class=""><a href=""><img src="/images/overview.svg" alt="Overview">Overview</a></li>
+                <li><a href=""><img src="/images/overview.svg" alt="Agenda">Agenda</a></li>
+                <li><a href=""><img src="./images/orders.svg" alt="Orders">Orders</a></li>
+                <li><a href=""><img src="/images/credit-card.svg" alt="Payments">Payments</a></li>
+                <li><a href=""><img src="/images/invoice.svg" alt="Invoices">Invoices</a></li>
+                <li class="active"><a href=""><img src="/images/feedback.svg" alt="Feedbacks">Feedbacks</a></li>
+            </ul>
+        </div>
+
+        <div class="d-content">
+            <div class="d-feedback container-small">
+                <h3 class="page-title ">Feedbacks</h3>
+                <div class="row">
+                    <div class="p-2">
+                    <p class="h3 mb-20">Your rating:</p>
+                    <div class="rating-block">
+                        <div class="rating" data-rate="100">
+                            <span class="rateStarPopup active"></span>
+                            <span class="rateStarPopup active"></span>
+                            <span class="rateStarPopup active"></span>
+                            <span class="rateStarPopup active"></span>
+                            <span class="rateStarPopup active50"></span>
+                        </div>
+                        <span>4.9 (0)</span>
+                    </div>
+                        <div class="rating-block">
+                            <div class="rating">
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                            </div>
+                            <span>(100) comments</span>
+                        </div>
+                        <div class="rating-block">
+                            <div class="rating">
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                            </div>
+                            <span>(90) comments</span>
+                        </div>
+                        <div class="rating-block">
+                            <div class="rating">
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                            </div>
+                            <span>(50) comments</span>
+                        </div>
+                        <div class="rating-block">
+                            <div class="rating">
+                                <span class="rateStarPopup active"></span>
+                                <span class="rateStarPopup active"></span>
+                            </div>
+                            <span>(10) comments</span>
+                        </div>
+                        <div class="rating-block">
+                            <div class="rating">
+                                <span class="rateStarPopup active"></span>
+                            </div>
+                            <span>(0) comments</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="review-list">
+                    <h3 class="page-title">Comments</h3>
+
+
+                    <div class="payment-block">
+                        <table role="table" aria-busy="false" aria-colcount="5" class="table b-table table-striped table-hover" id="__BVID__142">
+                            <thead role="rowgroup" class="">
+                            <tr role="row" class="">
+                                <th role="columnheader" scope="col" aria-colindex="1" class="">
+                                    <div>Date</div>
+                                </th>
+                                <th role="columnheader" scope="col" aria-colindex="2" class="">
+                                    <div>Customer name</div>
+                                </th>
+                                <th role="columnheader" scope="col" aria-colindex="3" class="">
+                                    <div>Stars q-ty</div>
+                                </th>
+                                <th role="columnheader" scope="col" aria-colindex="4" class="">
+                                    <div>Review text</div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody role="rowgroup">
+                            <tr role="row" class="">
+                                <td aria-colindex="1" role="cell" class=""><span class="mobile">Date: </span>03.11.2023</td>
+                                <td aria-colindex="2" role="cell" class="">
+                                   <span class="mobile">Customer name: </span> John Albert
+                                </td>
+                                <td aria-colindex="3" role="cell" class="">
+                                   <span class="mobile">Stars q-ty</span> 5
+                                </td>
+                                <td aria-colindex="4" role="cell" class="">
+                                  <span class="mobile">Review text: </span>  Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, totam.
+                                </td>
+                            </tr>
+                            <tr role="row" class="">
+                                <td aria-colindex="1" role="cell" class=""><span class="mobile">Date: </span>03.11.2023</td>
+                                <td aria-colindex="2" role="cell" class="">
+                                   <span class="mobile">Customer name: </span> John Albert
+                                </td>
+                                <td aria-colindex="3" role="cell" class="">
+                                   <span class="mobile">Stars q-ty</span> 5
+                                </td>
+                                <td aria-colindex="4" role="cell" class="">
+                                  <span class="mobile">Review text: </span>  Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, totam.
+                                </td>
+                            </tr>
+                           </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script type='text/javascript' src='./js/main.js'></script>
+<script type='text/javascript' src='./js/vars.js'></script>
+<script type='text/javascript' src='./js/dashboard.js'></script>

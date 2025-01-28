@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/services.css">
+
+</head>
+<script>
+</script>
+
+
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="container-small">
+        <script>
+            var orderDataPreview = {
+                "obj[data][order_id]": "000324",
+                "obj[data][service_type]": "moving",
+                "obj[data][date_type]": "date",
+                "obj[data][date]": "06/12/2024",
+                "obj[data][date_from]": "",
+                "obj[data][date_to]": "",
+                "obj[data][time]": "09:00 - 10:00",
+                "obj[data][departure_latlng]": "[51.3578078,5.3159125]",
+                "obj[data][address_from]": "Eersel, Нідерланди",
+                "obj[data][postal_from]": "ewae",
+                "obj[data][accommodation_type_from]": "apartment",
+                "obj[data][bedrooms_from]": "2",
+                "obj[data][floor_from]": "1",
+                "obj[data][elevator_from]": "false",
+                "obj[data][isNeedBoxing]": "true",
+                "obj[data][address_to]": "[{\"latlng\":\"[50.8354726,4.382397300000001]\",\"address\":\"fdsfsd, Шоссе Вавр, Еттербек, Бельґія\",\"postal\":\"1040\",\"is_elevator\":\"false\",\"accommodationType\":\"office\",\"bedrooms\":\"234\",\"floor\":\"3\"}]",
+                "obj[data][accommodation_type_to]": "apartment",
+                "obj[data][bedrooms_to]": "",
+                "obj[data][floor_to]": "",
+                "obj[data][items_to_move]": "[{\"item_id\":\"seat-1\",\"item_category\":\"seat\",\"count\":\"1\"},{\"item_id\":\"seat-2\",\"item_category\":\"seat\",\"count\":\"1\"},{\"item_id\":\"seat-3\",\"item_category\":\"seat\",\"count\":\"1\"},{\"item_id\":\"seat-4\",\"item_category\":\"seat\",\"count\":\"1\"}]",
+                "obj[data][additionalInfo]": "ade",
+                "obj[data][name]": "username",
+                "obj[data][phone]": "4444444444",
+                "obj[data][email]": "skyrimhelmod@gmail.com",
+                "obj[data][needHelper]": "true",
+                "obj[data][vehicleType]": "20",
+                "obj[data][upload_images]": []
+            }
+            var orderFinishedInfo = {
+                "obj[data][duration]":"",
+                "obj[data][workers_num]":"",
+                "obj[data][extra_charges_amount]":"",
+                "obj[data][extra_charges_comment]":"",
+                "obj[data][price]":"",
+                "obj[data][hourly_rate]":"",
+            }
+        </script>
+
+        <div class="preview-services preview-page">
+            <div class="preview-container custom-padding">
+                <button class="print btn" id="print"><img src="/images/print.svg" alt="print">Print</button>
+                <h2 class="page-title">Review request # <span id="req_id"></span></h2>
+                <h4 class="mb-20">Status: <span style="color: #39b54a" id="req_status"></span></h4>
+               <div class="finished-info hide">
+                   <h4 class="mb-20">Order details: </h4>
+                   <div class="details-order mb-40">
+                       <p><strong>Duration</strong>: <span id="order-duration"></span></p>
+                       <p><strong>Number of workers</strong>: <span id="movers-number"></span></p>
+                       <p class="hide" id="z1"><strong>Hourly rate</strong>: <span id="hourly-rate"></span>$</p>
+                       <p class="hide" id="z2"><strong>Travel expenses</strong>: <span id="travel-rate"></span>$</p>
+                       <p class="hide" id="z3"><strong>Price</strong>: <span id="price-rate"></span>$</p>
+                       <p class="hide" id="z4"><strong>Extra charges</strong>: <span id="extra-charges"></span>$</p>
+                       <div class="card-tips mt-40" id="worker-comment">
+                           <div class="card-t-title">
+                               <p>Worker's comment:</p>
+                           </div>
+                           <div class="card-t-content" id="worker-comment-text"></div>
+                       </div>
+                       <div class="add_info_finish">
+
+                       </div>
+                   </div>
+               </div>
+                <h4 class="contains-image mb-20">
+                    <svg data-v-2c8ac7f7="" aria-hidden="true" focusable="false" data-prefix="far"
+                         data-icon="calendar-days" role="img" xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 448 512" class="svg-inline--fa fa-calendar-days">
+                        <path data-v-2c8ac7f7="" fill="#39b54a"
+                              d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 248H128V192H48V248zM48 296V360H128V296H48zM176 296V360H272V296H176zM320 296V360H400V296H320zM400 192H320V248H400V192zM400 408H320V464H384C392.8 464 400 456.8 400 448V408zM272 408H176V464H272V408zM128 408H48V448C48 456.8 55.16 464 64 464H128V408zM272 192H176V248H272V192z"
+                              class=""></path>
+                    </svg>
+                    Review
+                </h4>
+                <div class="prev-address">
+                    <div class="google-map">
+                        <div id="map"></div>
+                    </div>
+                    <div class="addr-text">
+                        <div class="mb-40">
+                            <p><strong>Delivery date:</strong> <span id="datePreview"></span></p>
+                            <p><strong>Time: </strong><span id="timePreview"></span></p>
+                        </div>
+                        <div class="addr-text-item">
+                            <div class="addr-text-item-img">
+                                <img src="./images/moving_from.svg" alt="moving_from">
+                            </div>
+                            <div class="addr-text-item-info">
+                                <h4>Moving from</h4>
+
+                                <div id="moving_from_preview"></div>
+                            </div>
+                        </div>
+                        <div class="destination-container">
+                            <div class="flex">
+                                <div class="addr-text-item-img">
+                                    <img src="./images/moving_to.svg" alt="moving_to">
+                                </div>
+                                <h4>Moving To</h4>
+
+                            </div>
+                            <div id="moving_to_preview"></div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="contains-image mb-20" id="listItemsTitle">
+                    <svg data-v-2c8ac7f7="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="box"
+                         role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                         class="svg-inline--fa fa-box">
+                        <path data-v-2c8ac7f7="" fill="#39b54a"
+                              d="M50.73 58.53C58.86 42.27 75.48 32 93.67 32H208V160H0L50.73 58.53zM240 160V32H354.3C372.5 32 389.1 42.27 397.3 58.53L448 160H240zM448 416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V192H448V416z"
+                              class=""></path>
+                    </svg>
+                    List of items to be moved
+                </h4>
+                <div class="items-list non-edit mb-40">
+                    <div class="items-list-cont-out-2">
+
+                    </div>
+                </div>
+                <h4 class="flex items-center mb-20">Additional information
+                </h4>
+                <div class="card-tips" id="additionalDetailsBlock">
+                    <div class="card-t-title">
+                        <p>Customer Note</p>
+                    </div>
+                    <div class="card-t-content" id="customer-note-preview">
+                    </div>
+                </div>
+                <div class="card-tips">
+                    <div class="card-t-title">
+                        <p>Customer info</p>
+                    </div>
+                    <div class="card-t-content">
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>Full name *:</p>
+                            <p id="fullnamePreview"></p>
+                        </div>
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>
+                                Phone number *:
+                            </p>
+                            <p id="phoneNumberPreview">
+
+                            </p>
+                        </div>
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>
+                                Email *:
+                            </p>
+                            <p id="emailPreview"></p>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="card-tips hide" id="truck-type-b">
+                    <div class="card-t-title">
+                        <p>Truck type</p>
+                    </div>
+                    <div class="card-t-content">
+                        <div class="flex justify-content--space-between mb-20">
+                            <p>
+                                Truck type:
+                            </p>
+                            <p id="truckTypePreview">
+                            </p>
+                        </div>
+                        <div class="flex justify-content--space-between mb-20 hide" id="needHelperPreview">
+                            <p>
+                                Need helper
+                            </p>
+                            <p>Yes</p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <h4 class="flex items-center mb-20">
+                    Photos
+                </h4>
+                <div class="photos-preview" id="photos-preview">
+
+                </div>
+                <h4 class="flex items-center mb-20">
+                    Contact information
+                </h4>
+                <p class="mb-20"><strong>Phone:</strong> <span id="contactInfoPhonePreview"></span> (will not be shown on the website)</p>
+                <p class="mb-20"><strong>Email:</strong><span id="contactInfoEmailPreview"></span>  (will not be shown on the website)
+                </p>
+                <div class="btns-row">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/vars.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/googlemap.js"></script>
+<script src="./js/services-moving-preview.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwiUJfNYOssvARiVlNspEPt36YXzyP_c&callback=initMap&libraries=places&v=weekly,places&ext,geometry"
+        defer></script>
+
+

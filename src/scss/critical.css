@@ -1,0 +1,14 @@
+.layout{
+    opacity: 0;
+}
+header{
+    max-height: 65px;
+}
+.header-in .logo{
+    max-height: 45px;
+}
+@media screen and (max-width: 480px){
+    .header-in .logo{
+        max-height: 27px;
+    }
+}

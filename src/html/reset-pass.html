@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/auth.css">
+
+</head>
+<script>
+    var emailErrorLength = "The email field is required"
+    var emailErrorValid = "The email field must be a valid email"
+    var authError = "Wrong email of password."
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+
+    <div class="container">
+        <div class="auth-container">
+            <div class="form-card">
+                <h2>Forgot password</h2>
+                <form action="" id="resetPassForm">
+                    <div class="form">
+                        <div class="form-row email-form-row">
+                            <label for="email" class="label">Email address*</label>
+                            <input class="all-cback-inp" value="" placeholder="" name="obj[data][email]" type="email" id="email" autocomplete="email" autocompletetype="email">
+                            <span class="all-cback-inp-span cback-inp-error-text">*Enter email correctly</span>
+                        </div>
+                    </div>
+                    <div class="btn-row">
+                        <a href="/login" class="d-block">Previous</a>
+                        <button type="submit" class="btn">Reset password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/auth.js"></script>

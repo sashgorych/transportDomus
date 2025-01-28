@@ -1,0 +1,438 @@
+@import './blocks/_forms.scss';
+
+
+/*my requests start*/
+.expert-data{
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  span{
+    display: block;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-size: 21px;
+  }
+}
+.steps-nav .steps li{
+  &:nth-child(2),
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6){
+    //display: none;
+  }
+}
+.request-container{
+  margin-bottom: 30px;
+  &.no-request{
+    .my-requests-history-item{
+      justify-content: center;
+      padding:45px;
+    }
+  }
+}
+
+.bids-block{
+  width: 90%;
+  max-width: 860px;
+  margin: auto;
+}
+.bids{
+  padding: 10px 0;
+  font-size: 25px;
+}
+.my-requests-history-item {
+
+  border: 2px solid #e9eef2;
+  border-radius: 3px;
+  padding: 15px 5px;
+
+  display: flex;
+  &.expired{
+    .my-request-view{
+      a{
+        background: #9d5355!important;
+      }
+    }
+  }
+  &.completed{
+
+  }
+}
+.my-request-info{
+  p{
+    margin-bottom: 5px;
+  }
+  p:nth-child(1){
+    font-weight: 500;
+    span{
+      color: $green;
+    }
+  }
+  p:nth-child(2){
+    text-transform: capitalize;
+
+  }
+  p:nth-child(3){
+    font-weight: 100;
+  }
+}
+.my-request-info{
+  padding: 5px;
+
+  width: 40%;
+}
+.my-request-view{
+  width: 20%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a.view{
+    white-space: nowrap;
+    transition: .3s;
+    border-radius: 24px;
+    background: $green;
+    color: white;
+    padding: 7px 15px 8px 15px;
+    &:before{
+      content: "";
+      display: inline-block;
+      margin-right: 5px;
+      width: 25px;
+      height: 25px;
+      background: url("../images/view.svg");
+   background-size: contain;
+      margin-bottom: -6px;
+    }
+    &:hover,&:focus{
+      transition: .3s;
+      background: darken($green, 10%);
+    }
+  }
+  a.delete-request{
+    white-space: nowrap;
+    margin-left: 15px;
+    &:before{
+      content: "";
+      display: inline-block;
+      margin-right: 5px;
+      width: 15px;
+      height: 15px;
+      background: url("../images/trash.svg")no-repeat;
+   background-size: contain;
+      margin-bottom: -1px;
+    }
+  }
+}
+.my-request-addinfo{
+  width: 20%;
+  padding: 5px;
+
+  span{
+    font-weight: bold;
+    color: $green;
+  }
+  p{
+    margin-bottom: 5px;
+  }
+}
+.my-request-icon{
+  width: 16%;
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  img{
+    max-width: 56px;
+  }
+}
+.pricing_type_order{
+  display: flex;
+  align-items: center;
+  img{
+    width: 23px;
+    margin-right: 6px;
+  }
+}
+.exp_data{
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+    span{
+    text-transform: uppercase;
+    color: $green;
+    font-weight: 500;
+    font-size: 21px;
+    display: block;
+    margin-right: 10px;
+  }
+
+}
+@media screen and (max-width: 670px){
+  .my-requests-history-item{
+    flex-wrap: wrap;
+  }
+  .my-request-info{
+    width: 84%;
+    padding-left: 20px;
+  }
+  .my-request-addinfo{
+    width: 100%;
+  }
+  .my-request-icon{
+    margin-bottom: 30px;
+  }
+  .my-request-view{
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+/*my requests end*/
+
+/*orders start*/
+.row-i {
+  margin-bottom: 5px;
+}
+
+.from-to {
+  p {
+    margin-bottom: 0;
+  }
+
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $grayborder;
+
+  p:first-child {
+    margin-right: 10px;
+  }
+}
+
+.orders-list {
+  margin-bottom: 30px;
+  border: 1px solid $grayborder;
+}
+
+.order-row-container {
+  .order-row > div p{
+    text-transform: capitalize;
+  }
+  background: $grayborder;
+}
+.order-row-container.disabled{
+  .acceptBidBtn{
+
+  }
+}
+
+.order-row-total{
+  & > div{
+    margin-right: 25px;
+  }
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+  .mobile {
+    display: none;
+  }
+  .order-row {
+    display: flex;
+    align-items: center;
+
+    & > div {
+      padding: 8px 5px;
+
+      p {
+        font-size: 14px;
+      }
+
+      &:nth-child(1) {
+        min-width: 70px;
+        width: 11%;
+      }
+
+
+      &:nth-child(2) {
+        width: 16%;
+      }
+
+      &:nth-child(3) {
+        width: 13%;
+        min-width: 80px;
+
+      }
+
+      &:nth-child(4) {
+        min-width: 80px;
+        width: 13%;
+      }
+
+      &:nth-child(5) {
+        width: 12%;
+      }
+
+      &:nth-child(6) {
+        min-width: 80px;
+        width: 16%;
+      }
+
+      &:nth-child(7) {
+        width: 12%;
+      }
+    }
+  }
+
+
+
+.order-row-title {
+  p {
+    font-weight: bold;
+  }
+}
+
+.order-row {
+  border-bottom: 1px solid #e0e0e0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  button {
+    border: none;
+    background: transparent;
+    color: $green;
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+    &:disabled{
+      cursor: default;
+      color: $gray;
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+
+  }
+}
+.no-bids{
+  padding: 10px 25px;
+}
+.bids-list-container{
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+.acceptBidBtn{
+  color: $green;
+}
+.payment_addition_info {
+  min-height: 175px;
+  margin-bottom: 35px;
+}
+@media screen and (max-width: 1180px){
+  .bids-block{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 860px) {
+.orders-list{
+  min-width: 940px;
+}
+}
+/*orders end*/
+
+/*invoices start */
+.no-data-s{
+  padding: 10px 10px 40px 10px;
+  text-align: center;
+  display: block;
+  font-size: 19px;
+}
+.payment-table{
+  .table td{
+    vertical-align: middle;
+  }
+}
+.table {
+
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #4b4c4e;
+}
+.table thead th {
+  text-align: left;
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td, .table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, .05);
+}
+.table-danger, .table-danger>td, .table-danger>th {
+  background-color: #f5c6cb;
+}
+.table-danger tbody+tbody, .table-danger td, .table-danger th, .table-danger thead th {
+  border-color: #ed969e;
+}
+.table-danger, .table-danger>td, .table-danger>th {
+  background-color: #f5c6cb;
+}
+table {
+  border-collapse: collapse;
+}
+.table td, .table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+.yes{
+  width: 15px;
+  height: 15px;
+  background: url("../images/yes.svg")no-repeat;
+  background-size: contain;
+}
+.no{
+  width: 15px;
+  height: 15px;
+  background: url("../images/close.svg")no-repeat;
+  background-size: contain;
+  filter: brightness(0);
+}
+@media screen and (max-width: 576px){
+  .d-payments{
+    padding: 0!important;
+  }
+  .payment-block{
+    overflow-x: auto;
+  }
+  .table{
+    min-width: 425px;
+  }
+}
+/*invoices end */
+
+/*referal link start*/
+.ref-cont{
+  margin-top: 10px;
+  background: #e9ecef;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+}
+.promocode_copy_btn{
+  background: transparent;
+  border: none;
+  margin-left: 10px;
+  img{
+    width: 20px;
+  }
+  &:hover,&:focus{
+    transform: scale(1.1);
+  }
+}
+/*referal link end*/

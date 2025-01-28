@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/ladabel/favico.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Reidon Displays</title>
+
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+    * {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .container {
+        height: 100vh;
+        width: 100%;
+        background-image: url("http://html.medhati.com/trendy/assets/img/slider2.jpg");
+        background-size: cover;
+        background-position: 50% 0%;
+        /*overflow: hidden;*/
+    }
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+    .wrapper:before{
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        content: "";
+        height: 100%;
+        opacity: 0.7;
+        background: linear-gradient(-55deg, transparent 25%, #16181E 25%, #16181E 75%, transparent 75%, transparent 100%);
+        /*background: linear-gradient(-210deg, transparent 0%, #16181E 0%, #16181E 70%, transparent 50%, transparent 100%);*/
+        transition: all 0.5s cubic-bezier(0.67, 0, 0.3, 1) 1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content {
+        /*transform:rotate(50deg);*/
+        padding: 1rem;
+        color: white;
+    }
+
+    .content h1 {
+        font-size: 3rem;
+        color: white;
+    }
+
+    .content p {
+        font-size: 1.1rem;
+        color: white;
+    }
+
+    .content a.btn2 {
+        color: white;
+        display: inline-block;
+        padding: 2.1% 4%;
+        overflow: hidden;
+        border-radius: 0;
+        text-decoration: none;
+    }
+        .row a{
+            font-size: 25px;
+            color: white;
+            text-decoration: none;
+        }
+        .row span{
+            font-size: 25px;
+            color: white;
+        }
+    .btn1 {
+        border: 1px solid white;
+        transition: 0.2s ease-in-out;
+    }
+
+    .btn1:hover {
+        border: 1px solid white;
+        background-color: white;
+        color: black;
+        transition: 0.2s ease-in-out;
+    }
+
+    .btn2 img{
+        width: 20px;
+        margin-right: 10px;
+        display: block;
+    }
+    .btns-row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn2 {
+        white-space: nowrap;
+        display: flex!important;
+        align-items: center;
+        margin-left: 3%;
+        border-width: 1px;
+        border-style: solid;
+        transition: 0.2s ease-in-out;
+    }
+
+    .btn2:hover {
+        background: none;
+        border-image: linear-gradient(to bottom right, #252AFF 0%, #25FFED 100%);
+        border-image-slice: 1;
+        border-width: 1px;
+        border-style: solid;
+        transition: 0.2s ease-in-out;
+    }
+
+    .dd img{
+        display: block;
+    }
+    .dd{
+        max-width: 400px;
+        margin: auto;
+        padding: 25px;
+    }
+    .ddd{
+        font-size: 25px;
+    }
+    @media screen and (max-width: 1380px){
+        .wrapper:before{
+
+            background: linear-gradient(-55deg, transparent 10%, #16181E 10%, #16181E 90%, transparent 90%, transparent 100%);
+        }
+    }
+    @media screen and (max-width: 730px){
+        .wrapper:before{
+            background: linear-gradient(-225deg, transparent 0%, #16181E 0%, #16181E 70%, transparent 50%, transparent 100%);        }
+        .wrapper {
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+        }
+        .btns-row .btn2{
+            margin-left: 0;
+            margin-bottom: 18px;
+        }
+        .btns-row{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .dd{
+            padding-left: 0;
+            margin-left: 0;
+        }
+    }
+    .wrapper{
+        min-height: 100vh;
+    }
+    @media screen and (max-width: 630px) {
+
+        .dd {
+            max-width: 250px;
+        }
+        .row a{
+            font-size: 17px;
+
+        }
+        .wrapper:before {
+            background: linear-gradient(-240deg, transparent 0%, #16181E 0%, #16181E 70%, transparent 50%, transparent 100%);
+        }
+        .content a.btn2{
+            font-size: 16px;
+        }
+        .content h1{
+            font-size: 28px;
+        }
+        .content p{
+            font-size: 17px;
+        }
+        .row span{
+            font-size: 17px;
+        }
+    }
+    @media screen and (max-width: 460px){
+        .wrapper:before{
+
+            background: linear-gradient(-240deg, transparent 0%, #16181E 0%, #16181E 85%, transparent 50%, transparent 100%);
+        }
+    }
+</style>
+<body>
+
+        <div class="container">
+            <div class="wrapper">
+                <div class="content">
+                    <div class="dd">
+                        <img src="/images/ladabel/Reidon-Displays_white.png" alt="Reidon logo">
+                    </div>
+                    <div class="row">
+                        <span>Phone:<a class="ddd" target="_blank" href="tel:+491722755552">+49 172 275 55 52</a></span>
+                    </div>
+                    <div class="row">
+                        <span>Email: <a class="ddd" target="_blank" href="mailto:reidon.de@gmail.com">reidon.de@gmail.com</a></span>
+
+                    </div>
+                    <h1>We're in development <br>Coming Soon</h1>
+                    <p style="text-transform: uppercase;">View our products</p>
+                    <!-- <a href="#" class="btn1">Subscribe</a> -->
+                    <div class="btns-row">
+                    <a href="/images/ladabel/Reidon-Product-Catalog.pdf" class="btn2" target="_blank"><img src="./images/ladabel/pdf.svg" alt="Reidon Product Catalog">Reidon Product Catalog</a>
+                    <a href="/images/ladabel/Reidon-Product-Flyer.pdf" class="btn2" target="_blank"><img src="./images/ladabel/pdf.svg" alt="Reidon Product Flyer">Reidon Product Flyer</a>
+                    </div>
+                </div> <!-- content ends -->
+            </div> <!-- wrapper ends -->
+        </div> <!-- container ends -->
+</body>
+</html>

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/services.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+
+    </script>
+</head>
+
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="container-small">
+        <form action="" id="delivery-order-form">
+            <input type="text" class="hidden-object" value="delivery" name="obj[data][service_type]">
+
+            <div class="delivery-order-step1">
+                <div class="specify-delivery mb-40">
+                    <h4 class="mb-20 contains-image">
+                        What do you need delivered:
+                    </h4>
+                    <fieldset class="form-group">
+                        <div role="radiogroup" tabindex="-1" class="bv-no-focus-ring">
+                            <div class="custom-control custom-control-inline custom-radio">
+                                <input type="radio" checked="" name="obj[data][delivery_type]"
+                                       class="custom-control-input" value="worn_items"
+                                       id="worn_item">
+                                <label class="custom-control-label" for="worn_item">Worn items (up to 5 items)</label>
+                            </div>
+                            <div class="custom-control custom-control-inline custom-radio">
+                                <input type="radio" name="obj[data][delivery_type]" class="custom-control-input"
+                                       value="from_store"
+                                       id="from_store">
+                                <label class="custom-control-label" for="from_store">Bought from store (unlimited
+                                    items)</label>
+                            </div>
+                            <div class="custom-control custom-control-inline custom-radio">
+                                <input type="radio" name="obj[data][delivery_type]" class="custom-control-input"
+                                       value="entrepreneur"
+                                       id="small_enter">
+                                <label class="custom-control-label" for="small_enter">Small entrepreneurs</label>
+                            </div>
+                            <div class="custom-control custom-control-inline custom-radio">
+                                <input type="radio" name="obj[data][delivery_type]" class="custom-control-input"
+                                       value="other"
+                                       id="d_other">
+                                <label class="custom-control-label" for="d_other">Other</label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+                <div class="select-date mb-40">
+                    <h4 class="mb-20 contains-image">
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar-days" role="img"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                             class="svg-inline--fa fa-calendar-days">
+                            <path fill="#39b54a"
+                                  d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 248H128V192H48V248zM48 296V360H128V296H48zM176 296V360H272V296H176zM320 296V360H400V296H320zM400 192H320V248H400V192zM400 408H320V464H384C392.8 464 400 456.8 400 448V408zM272 408H176V464H272V408zM128 408H48V448C48 456.8 55.16 464 64 464H128V408zM272 192H176V248H272V192z"
+                                  class=""></path>
+                        </svg>
+                        Specify the date of your delivery
+                    </h4>
+                    <div class="form">
+                        <div class="row">
+                            <div class="p-3">
+                                <div class="form-row dateType-form-row active">
+                                    <label for="dateType" class="label">Date type *</label>
+                                    <select class="custom-select custom-select-lg"
+                                            name="obj[data][date_type]" id="dateType">
+                                        <option value="date" selected="">Exact date</option>
+                                        <option value="range">Range</option>
+                                    </select>
+                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="form-row dateS-form-row" id="date-one">
+                                    <label for="dateS" class="label">Date*</label>
+                                    <input class="all-cback-inp requiredFill" value="" placeholder=""
+                                           name="obj[data][date]" autocomplete="off" type="text"
+                                           id="dateS">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                </div>
+                                <div id="date-range" class="hide">
+                                    <div class="form-row">
+                                        <label for="date-start" class="label">Date from*</label>
+                                        <input class="all-cback-inp requiredFill" value="" placeholder=""
+                                               name="obj[data][date_from]" autocomplete="off" type="text"
+                                               id="date-start">
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                    <span>to</span>
+                                    <div class="form-row">
+                                        <label for="date-end" class="label">Date to*</label>
+                                        <input class="all-cback-inp requiredFill" value="" placeholder=""
+                                               name="obj[data][date_to]" autocomplete="off" type="text"
+                                               id="date-end">
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="form-row timeType-form-row active">
+                                    <label for="timeType" class="label">Time *</label>
+                                    <select class="custom-select custom-select-lg requiredFill"
+                                            name="obj[data][time]" id="timeType">
+                                        <option value="" disabled selected>Time</option>
+                                        <option value="08:00 - 09:00">08:00 - 09:00</option>
+                                        <option value="09:00 - 10:00">09:00 - 10:00</option>
+                                        <option value="10:00 - 11:00">10:00 - 11:00</option>
+                                        <option value="11:00 - 12:00">11:00 - 12:00</option>
+                                        <option value="12:00 - 14:00">12:00 - 14:00</option>
+                                        <option value="14:00 - 16:00">14:00 - 16:00</option>
+                                        <option value="16:00 - 18:00">16:00 - 18:00</option>
+                                        <option value="18:00 - 19:00">18:00 - 19:00</option>
+
+                                    </select>
+                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="select-places mb-40">
+                    <div class="row">
+                        <div class="p-2">
+                            <div class="card-moving card-moving-from">
+                                <h4 class="text-center">Moving from</h4>
+                                <input type="text" class="hidden-object" name="obj[data][departure_latlng]" aria-hidden="true" id="departure_latlng">
+
+                                <div class="form">
+                                    <div class="form-row">
+                                        <input class="all-cback-inp" value="" required placeholder=""
+                                               name="obj[data][address_from]"
+                                               type="text"
+                                               id="departureAddr">
+                                        <label for="departureAddr" class="label">Departure address *</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                    <div class="form-row">
+                                        <input class="all-cback-inp requiredFill" value="" required placeholder=""
+                                               name="obj[data][postal_from]"
+                                               type="text"
+                                               id="postalFrom">
+                                        <label for="postalFrom" class="label">Postal code *</label>
+
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                    <div class="form-row active">
+                                        <label for="isElevatorFrom" class="label">Elevator *</label>
+                                        <select class="custom-select custom-select-lg requiredFill"
+                                                name="obj[data][elevator_from]"
+                                                id="isElevatorFrom">
+                                            <option selected="selected" value="false">No</option>
+                                            <option value="true">Yes</option>
+                                        </select>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                    <div class="form-row">
+                                        <input class="styled-checkbox hidden-object" name="obj[data][isNeedBoxing]"
+                                               id="needBoxing" type="checkbox">
+                                        <label for="needBoxing" class="no-label"> <strong>Need Boxing and Packing
+                                            Service</strong>
+                                            <span>
+                                         (Check this box, if you need the mover to visit you beforehand to do the boxing and packing of your items.)
+                                        </span>
+                                        </label>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="card-moving card-moving-to">
+                                <h4 class="text-center">Moving To</h4>
+                                <input type="text" class="hidden-object" aria-hidden="true" id="destination_latlng">
+
+                                <input type="text" class="hidden-object" name="obj[data][address_to]"
+                                       id="addressToinput">
+                                <div class="address-to-list">
+
+                                </div>
+                                <div class="form">
+                                    <div class="form-row">
+                                        <input class="styled-checkbox hidden-object" name="obj[data][is_need_storage]"
+                                               id="needStorage" type="checkbox">
+                                        <label for="needStorage" class="no-label"> <strong>Storage</strong>
+                                            <span>
+                                             (Check this box, if you need the mover to move your belongings to their own storage facility.)
+                                        </span>
+                                        </label>
+
+
+                                    </div>
+                                    <p class="mb-10 hide" id="addrCount-a"><strong>Address <span id="addrCount-b"></span></strong></p>
+
+                                    <div class="form-row">
+                                        <input class="all-cback-inp requiredFill-js" value="" required
+                                               placeholder=""
+                                               name="address_to" type="text"
+                                               id="destinationAddr">
+                                        <label for="destinationAddr" class="label">Destination address *</label>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                    <div class="form-row">
+                                        <input class="all-cback-inp requiredFill-js" value="" required placeholder=""
+                                               name="postal_to"
+                                               type="text"
+                                               id="postalTo">
+                                        <label for="postalTo" class="label">Postal code *</label>
+
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+                                    <div class="form-row active">
+                                        <label for="isElevatorTo" class="label">Elevator *</label>
+                                        <select class="custom-select requiredFill-js custom-select-lg"
+                                                name="elevator_to"
+                                                id="isElevatorTo">
+                                            <option selected="selected" value="false">No</option>
+                                            <option value="true">Yes</option>
+                                        </select>
+                                        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                    </div>
+
+
+                                </div>
+                                <div class="add_more_destination">
+                                    <button type="button"> Add another one destination <span id="destin_length"><span>1</span>/15</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="items-to-move">
+                    <h4 class="contains-image mb-20">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="box" role="img"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-box">
+                            <path fill="#39b54a"
+                                  d="M50.73 58.53C58.86 42.27 75.48 32 93.67 32H208V160H0L50.73 58.53zM240 160V32H354.3C372.5 32 389.1 42.27 397.3 58.53L448 160H240zM448 416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V192H448V416z"
+                                  class=""></path>
+                        </svg>
+                        Specify the list of items to be moved
+                    </h4>
+                    <input type="text" class="hidden-object" name="obj[data][items_to_move]" id="chosenItemsToMove">
+                    <div class="items-list">
+                        <div class="items-list-cont-out-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="additional-info">
+                    <h4 class="mb-20">Additional details</h4>
+                    <div class="form">
+                        <div class="form-row">
+                        <textarea placeholder="Add additional details here" id="additionalInfoInp"
+                                  name="obj[data][additionalInfo]" rows="5" wrap="soft"
+                                  class="textarea"></textarea>
+                            <label>Add additional details here</label>
+                            <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                        </div>
+                        <div class="images-uploader-block">
+                            <div class="form-row ">
+                                <label for="file-input" class="no-label file-label">+Add pictures</label>
+                                <div class=""></div>
+                                <input multiple data-max_length="5" accept="image/*" id="file-input" class="upload__inputfile hidden-object" name="obj[data][images]" type="file">
+                                <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                            </div>
+                            <div class="photo-preview mb-40"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="person-info">
+                    <h4 class="contains-image mb-20">
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" role="img"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user">
+                            <path fill="#39b54a"
+                                  d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"
+                                  class=""></path>
+                        </svg>
+                        Contact information
+                    </h4>
+                    <div class="person-info-row form">
+                        <div class="row">
+                            <div class="p-3">
+                                <div class="form-row name-form-row">
+                                    <input class="all-cback-inp" value="username" readonly placeholder="" name="obj[data][name]"
+                                           type="text" id="firstName">
+                                    <label for="firstName" class="label">Name*</label>
+
+                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="form-row">
+                                    <input class="all-cback-inp" value="4444444444" readonly placeholder="phone" name="obj[data][phone]"
+                                           type="text" id="phone">
+                                    <label for="phone" class="label">Phone*</label>
+                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <div class="form-row">
+                                    <input class="all-cback-inp" value="skyrimhelmod@gmail.com" readonly="readonly"
+                                           placeholder="email" name="obj[data][email]" type="email" id="email">
+                                    <label for="email" class="label">Email*</label>
+                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns-row">
+                    <button type="button" class="btn" id="deliveryStep2">Next</button>
+                </div>
+            </div>
+            <div class="delivery-order-step2 hide">
+                <div class="truck-chose mb-40">
+                    <h4 class="mb-20">Choose truck</h4>
+                    <div class="veh-ttl">
+                        <span>Truck</span>
+                        <span>Driver</span>
+                        <span>1 Helper</span>
+                        <span>2 Helpers</span>
+                    </div>
+                    <fieldset class="col-radio" id="vehicle-row">
+                        <div role="group" aria-labelledby="checkbox-group">
+                            <div class="veh-row">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" name="obj[data][vehicleType]" class="custom-control-input "
+                                       value="26" id="vehicle26">
+                                <label class="custom-control-label veh-controll" for="vehicle26">26 feet</label>
+                            </div>
+                               <div class="helper-col">
+                                   <div class="custom-control custom-radio">
+                                       <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                              value="1" id="vehicle26_helper1">
+                                       <label class="custom-control-label" for="vehicle26_helper1">1</label>
+                                   </div>
+                                   <div class="custom-control custom-radio">
+                                       <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                              value="2" id="vehicle26_helper2">
+                                       <label class="custom-control-label" for="vehicle26_helper2">2</label>
+                                   </div>
+                               </div>
+                            </div>
+                            <div class="veh-row">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="obj[data][vehicleType]" class="custom-control-input "
+                                           value="24" id="vehicle24">
+                                    <label class="custom-control-label veh-controll" for="vehicle24">24 feet</label>
+                                </div>
+                                <div class="helper-col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="1" id="vehicle24_helper1">
+                                        <label class="custom-control-label" for="vehicle24_helper1">1</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="2" id="vehicle24_helper2">
+                                        <label class="custom-control-label" for="vehicle24_helper2">2</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="veh-row">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="obj[data][vehicleType]" class="custom-control-input "
+                                           value="20" id="vehicle20">
+                                    <label class="custom-control-label veh-controll" for="vehicle20">20 feet</label>
+                                </div>
+                                <div class="helper-col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="1" id="vehicle20_helper1">
+                                        <label class="custom-control-label" for="vehicle20_helper1">1</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="2" id="vehicle20_helper2">
+                                        <label class="custom-control-label" for="vehicle20_helper2">2</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="veh-row">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="obj[data][vehicleType]" class="custom-control-input "
+                                           value="2000" id="vehicle20_b">
+                                    <label class="custom-control-label veh-controll" for="vehicle20_b">20 feet with tailgate</label>
+                                </div>
+                                <div class="helper-col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="1" id="vehicle20_b_helper1">
+                                        <label class="custom-control-label" for="vehicle20_b_helper1">1</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="2" id="vehicle20_b_helper2">
+                                        <label class="custom-control-label" for="vehicle20_b_helper2">2</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="veh-row">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="obj[data][vehicleType]" class="custom-control-input "
+                                           value="20" id="vehicle16">
+                                    <label class="custom-control-label veh-controll" for="vehicle16">16 feet</label>
+                                </div>
+                                <div class="helper-col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="1" id="vehicle16_helper1">
+                                        <label class="custom-control-label" for="vehicle16_helper1">1</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="2" id="vehicle16_helper2">
+                                        <label class="custom-control-label" for="vehicle16_helper2">2</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="veh-row">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="obj[data][vehicleType]" class="custom-control-input "
+                                           value="20" id="vehicle12">
+                                    <label class="custom-control-label veh-controll" for="vehicle12">12 feet</label>
+                                </div>
+                                <div class="helper-col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="1" id="vehicle12_helper1">
+                                        <label class="custom-control-label" for="vehicle12_helper1">1</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="2" id="vehicle12_helper2">
+                                        <label class="custom-control-label" for="vehicle12_helper2">2</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="veh-row">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="obj[data][vehicleType]" class="custom-control-input "
+                                           value="20" id="vehicle8">
+                                    <label class="custom-control-label veh-controll" for="vehicle8">8 feet</label>
+                                </div>
+                                <div class="helper-col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="1" id="vehicle8_helper1">
+                                        <label class="custom-control-label" for="vehicle8_helper1">1</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="2" id="vehicle8_helper2">
+                                        <label class="custom-control-label" for="vehicle8_helper2">2</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="veh-row">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" name="obj[data][vehicleType]" class="custom-control-input "
+                                           value="20" id="vehicle4">
+                                    <label class="custom-control-label veh-controll" for="vehicle4">4 feet</label>
+                                </div>
+                                <div class="helper-col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="1" id="vehicle4_helper1">
+                                        <label class="custom-control-label" for="vehicle4_helper1">1</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" name="obj[data][needHelper]" class="custom-control-input"
+                                               value="2" id="vehicle4_helper2">
+                                        <label class="custom-control-label" for="vehicle4_helper2">2</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="all-cback-inp-span cback-inp-error-text">*The car type field is&nbsp;required</span>
+
+                    </fieldset>
+                    <div class="form">
+                        <div class="form-row">
+                            <input class="styled-checkbox hidden-object" id="addHelper" name="obj[data][needHelper]"
+                                   type="checkbox">
+                            <label for="addHelper" class="no-label"> <span> Add helper (optional)</span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                </div>
+                <h4 class="mb-20">Chose an expert (optional)</h4>
+                <div class="form-row active">
+                    <input class="styled-checkbox hidden-object" name="is_direct_expert" id="is_direct_expert" type="checkbox">
+                    <label for="is_direct_expert" class="no-label"> <strong></strong>
+                        <span>
+                                       (Check this box if you want to send your order to a specific expert)
+                                        	</span>
+                    </label>
+                </div>
+                <div class="direct-expert hide">
+                    <h4 class="mb-20">Select an Expert</h4>
+                    <div class="row">
+                        <div class="p-2">
+                    <div class="form-row">
+                    <select name="" style="width: 100%" id="select-prev-expert" name="obj[data][direct_expert]">
+                        <option value="224444">224444 Sasha Agenda</option>
+                        <option value="224442">224442 Sasha Agenda2</option>
+                    </select>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="left-go-arrow prev-btn" id="goDeliveryStep1">Prev</button>
+
+                <div class="btns-row">
+                    <button type="button" class="btn" id="goDeliveryPreview">Next</button>
+                </div>
+
+            </div>
+
+
+            <div class="preview-services hide">
+                <div class="preview-container custom-padding">
+                    <button class="print btn" id="print"><img src="./images/print.svg" alt="print">Print</button>
+                    <h2 class="page-title">Review and send your request</h2>
+                    <h4 class="contains-image mb-20">
+                        <svg data-v-2c8ac7f7="" aria-hidden="true" focusable="false" data-prefix="far"
+                             data-icon="calendar-days" role="img" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 448 512" class="svg-inline--fa fa-calendar-days">
+                            <path data-v-2c8ac7f7="" fill="#39b54a"
+                                  d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 248H128V192H48V248zM48 296V360H128V296H48zM176 296V360H272V296H176zM320 296V360H400V296H320zM400 192H320V248H400V192zM400 408H320V464H384C392.8 464 400 456.8 400 448V408zM272 408H176V464H272V408zM128 408H48V448C48 456.8 55.16 464 64 464H128V408zM272 192H176V248H272V192z"
+                                  class=""></path>
+                        </svg>
+                        Review
+                    </h4>
+
+                    <div class="prev-address">
+                        <div class="google-map">
+                            <div id="map"></div>
+                        </div>
+                        <div class="addr-text">
+                            <div class="mb-40">
+                                <p><strong>Delivery date:</strong> <span id="datePreview"></span></p>
+                                <p><strong>Time: </strong><span id="timePreview"></span></p>
+                            </div>
+                            <div class="addr-text-item">
+                                <div class="edit-btn">
+                                    <button type="button"><img src="./images/edit.svg" alt="">Edit</button>
+                                </div>
+                                <div class="addr-text-item-img">
+                                    <img src="./images/moving_from.svg" alt="moving_from">
+                                </div>
+                                <div class="addr-text-item-info">
+                                    <h4>Moving from</h4>
+
+                                    <div id="moving_from_preview"></div>
+                                </div>
+                            </div>
+                            <div class="destination-container">
+                                <div class="flex">
+                                    <div class="edit-btn">
+                                        <button type="button"><img src="./images/edit.svg" alt="">Edit</button>
+                                    </div>
+                                    <div class="addr-text-item-img">
+                                        <img src="./images/moving_to.svg" alt="moving_to">
+                                    </div>
+                                    <h4>Moving To</h4>
+
+                                </div>
+                                <div id="moving_to_preview"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="contains-image mb-20" id="listItemsTitle">
+                        <svg data-v-2c8ac7f7="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="box"
+                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                             class="svg-inline--fa fa-box">
+                            <path data-v-2c8ac7f7="" fill="#39b54a"
+                                  d="M50.73 58.53C58.86 42.27 75.48 32 93.67 32H208V160H0L50.73 58.53zM240 160V32H354.3C372.5 32 389.1 42.27 397.3 58.53L448 160H240zM448 416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V192H448V416z"
+                                  class=""></path>
+                        </svg>
+                        List of items to be moved
+                        <button class="edit" type="button"><img src="./images/edit.svg" alt="edit">Edit</button>
+                    </h4>
+                    <div class="items-list non-edit mb-40">
+                        <div class="items-list-cont-out-2">
+
+                        </div>
+                    </div>
+                    <h4 class="flex items-center mb-20">Additional information
+                        <button class="edit" type="button"><img src="./images/edit.svg" alt="edit">Edit</button>
+                    </h4>
+                    <div class="card-tips" id="additionalDetailsBlock">
+                        <div class="card-t-title">
+                            <p>Customer Note</p>
+                        </div>
+                        <div class="card-t-content" id="customer-note-preview">
+                        </div>
+                    </div>
+                    <div class="card-tips">
+                        <div class="card-t-title">
+                            <p>Customer info</p>
+                        </div>
+                        <div class="card-t-content">
+                            <div class="flex justify-content--space-between mb-20">
+                                <p>Full name *:</p>
+                                <p id="fullnamePreview"></p>
+                            </div>
+                            <div class="flex justify-content--space-between mb-20">
+                                <p>
+                                    Phone number *:
+                                </p>
+                                <p id="phoneNumberPreview">
+
+                                </p>
+                            </div>
+                            <div class="flex justify-content--space-between mb-20">
+                                <p>
+                                    Email *:
+                                </p>
+                                <p id="emailPreview"></p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="card-tips">
+                        <div class="card-t-title">
+                            <p>Truck type</p>
+                        </div>
+                        <div class="card-t-content">
+                            <div class="flex justify-content--space-between mb-20">
+                                <p>
+                                    Truck type:
+                                </p>
+                                <p id="truckTypePreview">
+                                </p>
+                            </div>
+                            <div class="flex justify-content--space-between mb-20 hide" id="needHelperPreview">
+                                <p>
+                                    Need helper
+                                </p>
+                                <p>Yes</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <h4 class="flex items-center mb-20">
+                        Photos
+                        <button class="edit" type="button"><img src="./images/edit.svg" alt="edit">Edit</button>
+                    </h4>
+                    <div class="photos-preview" id="photos-preview">
+
+                    </div>
+                    <h4 class="flex items-center mb-20">
+                        Contact information
+                        <button class="edit" type="button"><img src="./images/edit.svg" alt="edit">Edit</button>
+                    </h4>
+                    <p class="mb-20"><strong>Phone:</strong> <span id="contactInfoPhonePreview"></span> (will not be shown on the website)</p>
+                    <p class="mb-20"><strong>Email:</strong><span id="contactInfoEmailPreview"></span>  (will not be shown on the website)
+                    </p>
+                    <div class=""></div>
+                    <div class="btns-row">
+                        <a href="" id="sendForm" class="btn big-btn">Send</a>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/vars.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/googlemap.js"></script>
+<script src="./js/service-delivery.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwiUJfNYOssvARiVlNspEPt36YXzyP_c&callback=initMap&libraries=places&v=weekly,places&ext,geometry"
+        defer></script>
+
+<script>
+    $('input[name="obj[data][vehicleType]"]').change(function (e){
+        console.log( $(e.target).parents('.veh-row').find('input[name="obj[data][needHelper]"]'))
+        $('#vehicle-row').find('input[name="obj[data][needHelper]"]').prop("checked",false);
+
+        $(e.target).parents('.veh-row').find('input[name="obj[data][needHelper]"]').prop("checked",false);
+    })
+</script>
+
+
+<div class="payment_type">
+    <fieldset class="col-radio" id="payment-row">
+        <legend tabindex="-1">Cost of work</legend>
+        <div role="group" aria-labelledby="checkbox-group">
+            <div class="custom-control custom-control-inline custom-radio">
+                <input type="radio" checked name="obj[data][payment_type]"
+                       class="custom-control-input" value="hourly" id="hourly_rate">
+                <label class="custom-control-label" for="hourly_rate">Hourly
+                    rate</label>
+            </div>
+            <div class="custom-control custom-control-inline custom-radio">
+                <input type="radio" name="obj[data][payment_type]"
+                       class="custom-control-input" value="price" id="fixed_price">
+                <label class="custom-control-label" for="fixed_price">Flat fee</label>
+            </div>
+        </div>
+        <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+
+    </fieldset>
+    <div class="payment_addition_info">
+        <div class="hourly_rate_block" id="hourly_rate_block_id">
+            <div class="form-row">
+                <input class="all-cback-inp pac-target-input requiredFill-js no-arrows"
+                       value=""
+                       placeholder="" name="obj[data][hour_cost]" type="number"
+                       id="hourly_cost"
+                       autocomplete="off">
+                <label for="hourly_cost" class="label">Hourly cost for 1 hour, $</label>
+                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+            </div>
+            <div class="form-row active">
+                <label for="minimum_hours" class="label">Minimum hours</label>
+                <select class="custom-select custom-select-lg"
+                        name="obj[data][min_hours]"
+                        id="minimum_hours">
+                    <option selected="selected" value="1">1 hour</option>
+                    <option value="2">2 hours</option>
+                    <option value="3">3 hours</option>
+                    <option value="4">4 hours</option>
+                    <option value="5">5 hours</option>
+                    <option value="6">6 hours</option>
+                    <option value="7">7 hours</option>
+                    <option value="8">8 hours</option>
+                    <option value="9">9 hours</option>
+                    <option value="10">10 hours</option>
+                    <option value="11">11 hours</option>
+                    <option value="12">12 hours</option>
+                </select>
+                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+            </div>
+            <div class="form-row">
+                <input class="all-cback-inp pac-target-input requiredFill-js no-arrows"
+                       value=""
+                       placeholder="" name="obj[data][transportation_cost]"
+                       type="number"
+                       id="transportation_cost" autocomplete="off">
+                <label for="transportation_cost" class="label">Travel expenses,
+                    $ </label>
+                <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+            </div>
+        </div>
+        <div class="fixed_rate_block hide" id="fixed_rate_block_id">
+            <div class="form-row">
+                <input class="all-cback-inp pac-target-input requiredFill-js no-arrows"
+                       value=""
+                       placeholder="" name="obj[data][fixed_payment]" type="number"
+                       id="fixed_cost" autocomplete="off">
+                <label for="fixed_cost" class="label">Fixed price, $</label>
+                <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+            </div>
+        </div>
+    </div>
+</div>
+<link href="/css/select2.min.css" rel="stylesheet" />
+<script src="/js/select2.min.js"></script>
+<script>
+    $('#select-prev-expert').select2({
+        width:"element"
+    })
+</script>

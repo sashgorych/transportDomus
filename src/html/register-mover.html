@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/auth.css">
+
+</head>
+<script>
+    var emailErrorLength = "The email field is required"
+    var emailErrorValid = "The email field must be a valid email"
+    var firstnameErrorLength = "The first name field is required"
+    var lastnameErrorLength = "The last name field is required"
+    var phoneErrorValid = "Enter phone correctly"
+    var passwordErrorValid = "The password field is required"
+    var passwordErrorEqual = "passwords must be equal"
+    var authError = "Wrong email of password."
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+
+    <div class="container">
+        <div class="auth-container">
+            <div class="registration-container">
+                <div class="customer-reg">
+                    <div class="form-card">
+                        <h2>Mover registration</h2>
+                        <form action="" class="registerform" id="registerformPerson">
+                            <input type="text" name="obj[data][userType]" id="userType" class="hidden-object" value="mover">
+
+                            <h4 class="mt-4">Contact person</h4>
+                            <div class="form">
+                                <div class="row">
+                                    <div class="p-2">
+                                        <div class="form-row firstname-form-row">
+                                            <label for="firstName" class="label">First name*</label>
+                                            <input class="all-cback-inp" value="" placeholder="" name="obj[data][name]" type="text" id="firstName" autocomplete="given-name" autocompletetype="given-name">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The first name field is required</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-2">
+                                        <div class="form-row lastname-form-row">
+                                            <label for="lastName" class="label">Last name*</label>
+                                            <input class="all-cback-inp" value="" placeholder="" name="obj[data][lastname]" type="text" id="lastName" autocomplete="family-name" autocompletetype="family-name">
+                                            <span class="all-cback-inp-span cback-inp-error-text">*The last name field is required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row email-form-row">
+                                    <label for="email" class="label">Email*</label>
+                                    <input class="all-cback-inp" value="" placeholder="" name="obj[data][email]" type="email" id="email" autocomplete="email" autocompletetype="email">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*Enter email correctly</span>
+
+                                </div>
+                                <div class="form-row phone-form-row">
+                                    <label for="phone" class="label">Phone number*</label>
+                                    <input class="all-cback-inp not-phone-mask" value="" placeholder="" name="obj[data][phone]" id="phone" type="tel" autocomplete="tel-local" autocompletetype="tel-local">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*Enter phone correctly</span>
+
+                                </div>
+                                <div class="form-row password-form-row">
+                                    <label for="password" class="label">Password *</label>
+                                    <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]" type="password" id="password">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                                </div>
+                                <div class="form-row password-repeat-form-row">
+                                    <label for="password" class="label">Repeat Password*</label>
+                                    <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]" type="password" id="password-check">
+                                    <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                                </div>
+
+
+                            </div>
+                            <div class="form-outro">
+                               <span class="small">Domus collects your data for the purpose of creating and managing your account. Learn more about <a
+                                       href="/">data protection policies</a>.</span>
+                                <span class="small">
+                                    By registering on Domus, you agree to our <a href="/">terms and conditions</a>.
+                                </span>
+                            </div>
+                            <div class="btn-row">
+                                <a href="" class="d-block" id="go-back-auth">Previous</a>
+                                <button type="submit" class="btn">Sign up</button>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/datepicker-full.min.js"></script>
+<script src="./js/auth.js"></script>
+
+Registration almost completed
+We have sent an email with a confirmation link to your email address. In order to complete the registration process, please click the confirmation link.

@@ -1,0 +1,196 @@
+<div class="default_popup2 temp_popups no-temp" id="make-bid" style="z-index:35">
+  <div class="popup_close2">
+    <div class="icon-close2"><span></span></div>
+  </div>
+  <div class="popup_body2 default-text">
+    <div class="popup_title2">
+      <p class="h5"> Make a bid for request #<span id="bid-text-order_id"></span> <span
+              id="bid-service_type"></span></p>
+    </div>
+    <div class="popup_content2">
+      <div class="make-bid-content">
+        <form action="" id="make-bid-form">
+          <input type="hidden" id="bid_order_id" name="obj[data][order_id]">
+          <!--                        <input type="hidden" id="expert_id" name="obj[data][expert_id]">-->
+          <input type="hidden" id="created_date" name="obj[data][created]">
+          <input type="hidden" id="status" value="expect" name="obj[data][status]">
+          <input type="hidden" id="time_bid" value="" name="obj[data][time]">
+
+          <div class="form">
+            <div class="date-bids" id="customer-date-time">
+              <div class="customer-date-time mb-20">
+                <p><strong>Target date for the client</strong>: <span id="customer_date"></span>
+                </p>
+                <p><strong>Time: </strong><span id="customer_time"></span></p>
+              </div>
+              <div class="row">
+                <div class="p-2">
+                  <div class="form-row expert_date-form-row">
+                    <input class="all-cback-inp pac-target-input requiredFill-js no-arrows"
+                           value=""
+                           placeholder="" name="obj[data][expert_date]" type="text"
+                           id="expert_date"
+                           autocomplete="off">
+                    <label for="expert_date" class="label">Chose date*</label>
+                    <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                  </div>
+                  <p id="dates_title" class="hide" style="margin-bottom: 0">Dates you
+                    offer:</p>
+                  <div class="dates-list">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="est_time-row">
+              <legend tabindex="-1">Estimated duration</legend>
+              <div class="row">
+                <div class="p-2">
+                  <div class="form-row est_duration_hours-form-row active">
+                    <label for="est_duration_hours" class="label">From</label>
+                    <select class="custom-select custom-select-lg" name="obj[data][est_duration_hours]" id="est_duration_hours">
+                      <option disabled="" value="" selected="">From</option>
+                      <option value="1">1 hour</option>
+                      <option value="2">2 hours</option>
+                      <option value="3">3 hours</option>
+                      <option value="4">4 hours</option>
+                      <option value="5">5 hours</option>
+                      <option value="6">6 hours</option>
+                      <option value="7">7 hours</option>
+                      <option value="8">8 hours</option>
+                      <option value="9">9 hours</option>
+                      <option value="10">10 hours</option>
+                      <option value="11">11 hours</option>
+                      <option value="12">12 hours</option>
+                    </select>
+                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                  </div>
+                </div>
+                <div class="p-2">
+                  <div class="form-row est_duration_minutes-form-row active">
+                    <label for="est_duration_minutes" class="label">To</label>
+                    <select class="custom-select custom-select-lg" name="obj[data][est_duration_minutes]" id="est_duration_minutes">
+                      <option disabled="" value="" selected="">To</option>
+                      <option value="1">1 hour</option>
+                      <option value="2">2 hours</option>
+                      <option value="3">3 hours</option>
+                      <option value="4">4 hours</option>
+                      <option value="5">5 hours</option>
+                      <option value="6">6 hours</option>
+                      <option value="7">7 hours</option>
+                      <option value="8">8 hours</option>
+                      <option value="9">9 hours</option>
+                      <option value="10">10 hours</option>
+                      <option value="11">11 hours</option>
+                      <option value="12">12 hours</option>
+
+                    </select>
+                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="exp-helpers">
+              <legend tabindex="-1">Helpers</legend>
+              <div class="form-row estimated_helpers-form-row active">
+                <label for="estimated_helpers" class="label">Helpers</label>
+                <select class="custom-select custom-select-lg" name="obj[data][estimated_helpers]" id="estimated_helpers">
+                  <option disabled="" value="" selected="">Helpers</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+                <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+              </div>
+            </div>
+
+
+            <div class="payment_type">
+              <fieldset class="col-radio" id="payment-row">
+                <legend tabindex="-1">Cost of work</legend>
+                <div role="group" aria-labelledby="checkbox-group">
+                  <div class="custom-control custom-control-inline custom-radio">
+                    <input type="radio" checked name="obj[data][payment_type]"
+                           class="custom-control-input" value="hourly" id="hourly_rate">
+                    <label class="custom-control-label" for="hourly_rate">Hourly
+                      rate</label>
+                  </div>
+                  <div class="custom-control custom-control-inline custom-radio">
+                    <input type="radio" name="obj[data][payment_type]"
+                           class="custom-control-input" value="price" id="fixed_price">
+                    <label class="custom-control-label" for="fixed_price">Flat fee</label>
+                  </div>
+                </div>
+                <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+
+              </fieldset>
+              <div class="payment_addition_info">
+                <div class="hourly_rate_block" id="hourly_rate_block_id">
+                  <div class="form-row">
+                    <input class="all-cback-inp pac-target-input requiredFill-js no-arrows"
+                           value=""
+                           placeholder="" name="obj[data][hour_cost]" type="number"
+                           id="hourly_cost"
+                           autocomplete="off">
+                    <label for="hourly_cost" class="label">Hourly cost for 1 hour, $</label>
+                    <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                  </div>
+                  <div class="form-row active">
+                    <label for="minimum_hours" class="label">Minimum hours</label>
+                    <select class="custom-select custom-select-lg"
+                            name="obj[data][min_hours]"
+                            id="minimum_hours">
+                      <option selected="selected" value="1">1 hour</option>
+                      <option value="2">2 hours</option>
+                      <option value="3">3 hours</option>
+                      <option value="4">4 hours</option>
+                      <option value="5">5 hours</option>
+                      <option value="6">6 hours</option>
+                      <option value="7">7 hours</option>
+                      <option value="8">8 hours</option>
+                      <option value="9">9 hours</option>
+                      <option value="10">10 hours</option>
+                      <option value="11">11 hours</option>
+                      <option value="12">12 hours</option>
+                    </select>
+                    <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                  </div>
+                  <div class="form-row">
+                    <input class="all-cback-inp pac-target-input requiredFill-js no-arrows"
+                           value=""
+                           placeholder="" name="obj[data][transportation_cost]"
+                           type="number"
+                           id="transportation_cost" autocomplete="off">
+                    <label for="transportation_cost" class="label">Travel expenses,
+                      $ </label>
+                    <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
+                  </div>
+                </div>
+                <div class="fixed_rate_block hide" id="fixed_rate_block_id">
+                  <div class="form-row">
+                    <input class="all-cback-inp pac-target-input requiredFill-js no-arrows"
+                           value=""
+                           placeholder="" name="obj[data][fixed_payment]" type="number"
+                           id="fixed_cost" autocomplete="off">
+                    <label for="fixed_cost" class="label">Fixed price, $</label>
+                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="popup_bottom2">
+      <div class="">
+        <button class="btn" id="makeBidBtn">Make a bid</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="side-menu__bg_popup2" style="z-index: 34"></div>
+<script>
+
+</script>

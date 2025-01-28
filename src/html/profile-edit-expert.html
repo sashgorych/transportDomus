@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/profile.css">
+
+</head>
+<script>
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="container-600 custom-padding">
+        <h2 class="page-title text-left">Edit profile</h2>
+            <form action="" class="registerform" id="registerformPerson">
+                <input type="text" name="obj[data][userType]" id="userType" class="hidden-object" value="customer">
+                <p class="notification-text">To change your personal information, please contact the site administrator: +12345678919</p>
+                <div class="form">
+                    <div class="row">
+                        <div class="p-2">
+                            <div class="form-row firstname-form-row">
+                                <input class="all-cback-inp" readonly value="" placeholder="" name="obj[data][name]" type="text" id="firstName" autocomplete="given-name" autocompletetype="given-name">
+                                <label for="firstName" class="label">First name*</label>
+
+                                <span class="all-cback-inp-span cback-inp-error-text">*The first name field is required</span>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="form-row lastname-form-row">
+                                <input class="all-cback-inp" readonly value="" placeholder="" name="obj[data][lastname]" type="text" id="lastName" autocomplete="family-name" autocompletetype="family-name">
+                                <label for="lastName" class="label">Last name*</label>
+
+                                <span class="all-cback-inp-span cback-inp-error-text">*The last name field is required</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row email-form-row">
+                        <input class="all-cback-inp" readonly value="" placeholder="" name="obj[data][email]" type="email" id="email" autocomplete="email" autocompletetype="email">
+                        <label for="email" class="label">Email*</label>
+                        <span class="all-cback-inp-span cback-inp-error-text">*Enter email correctly</span>
+
+                    </div>
+                    <div class="form-row phone-form-row">
+                        <input class="all-cback-inp not-phone-mask" readonly value="" placeholder="" name="obj[data][phone]" id="phone" type="tel" autocomplete="tel-local" autocompletetype="tel-local">
+                        <label for="phone" class="label">Phone number*</label>
+                        <span class="all-cback-inp-span cback-inp-error-text">*Enter phone correctly</span>
+
+                    </div>
+                    <div class="tabs-block">
+                        <div class="tabs-title mb-20">
+                                <input class="styled-checkbox hidden-object" id="changePassword" type="checkbox">
+                                <label for="changePassword" class="no-label v-text-center">Change password</label>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="form-row password-form-row">
+                                <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]" type="password" id="password">
+                                <label for="password" class="label">New Password *</label>
+                                <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                            </div>
+                            <div class="form-row password-repeat-form-row">
+                                <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]" type="password" id="password-check">
+                                <label for="password" class="label">Repeat Password*</label>
+
+                                <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="btn-row btn-right">
+                    <button type="submit" class="btn">Save</button>
+
+                </div>
+            </form>
+        <div class="referal-block">
+            <h4 class="text-left mb-20">Referral link</h4>
+            <p>Your referral link</p>
+            <div class="ref-cont"><span id="ref-code">dsjfkdsfuhaskdgfjgdasjf</span><button class="promocode_copy_btn" type="button"><img src="/images/copy-ico.svg" alt="copy"></button></div>
+        </div>
+    </div>
+    @@include('blocks/footer.html')
+
+    <script>
+        $(".promocode_copy_btn").click(function (e) {
+            let code = $("#ref-code").html()
+            copyTextToClipboard(code)
+            showFeedback2("copied to clipboard","","ok", "short")
+        })
+        function copyTextToClipboard(text) {
+            if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(text);
+                return;
+            }
+            navigator.clipboard.writeText(text).then(function() {
+                console.log('Async: Copying to clipboard was successful!');
+            }, function(err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Fallback: Copying text command was ' + msg);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+
+            document.body.removeChild(textArea);
+        }
+    </script>

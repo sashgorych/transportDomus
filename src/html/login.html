@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/auth.css">
+
+</head>
+<script>
+    var emailErrorLength = "The email field is required"
+    var emailErrorValid = "The email field must be a valid email"
+    var authError = "Wrong email of password."
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+
+<div class="container">
+    <div class="auth-container">
+        <div class="form-card">
+            <h2>Log in</h2>
+            <div class="login-pre">
+                <p> Not yet signed up on Domus? <a href="/registration" class="pl-2">Sign up</a></p>
+            </div>
+        <form action="">
+            <div class="form">
+                <div class="form-row email-form-row">
+                    <label for="email" class="label">Email *</label>
+                    <input class="all-cback-inp" value="" placeholder="" name="obj[data][email]" type="email" id="email" autocomplete="email" autocompletetype="email">
+                    <span class="all-cback-inp-span cback-inp-error-text">*Enter email correctly</span>
+                </div>
+                <div class="form-row password-form-row">
+                    <label for="password" class="label">Password *</label>
+                    <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]" type="password" id="password" autocomplete="password" autocompletetype="password">
+                    <span class="all-cback-inp-span cback-inp-error-text">*Enter your password</span>
+                </div>
+            </div>
+            <div class="form-outro">
+                <a href="/forgot-password" class="d-block">
+                    I’ve forgotten my password
+                </a>
+            </div>
+            <button type="submit" class="btn">Sign in</button>
+        </form>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    document.querySelectorAll('.form-row').forEach(el=>{
+        console.log(el.querySelector('input'));
+        el.querySelector('input').addEventListener('focus',function (e){
+            e.target.parentElement.classList.add('active')
+            e.target.parentElement.classList.remove('error')
+            e.target.removeAttribute('aria-invalid');
+
+        })
+        el.querySelector('input').addEventListener('blur',function (e){
+            if(e.target.type == "email"){
+                if(e.target.value == 0){
+                    e.target.parentElement.querySelector('.all-cback-inp-span').innerHTML=emailErrorLength;
+                    e.target.parentElement.classList.add('error')
+                    e.target.setAttribute('aria-invalid','true');
+
+                }else {
+                    if (!validateEmail(e.target.value)) {
+                        e.target.parentElement.querySelector('.all-cback-inp-span').innerHTML = emailErrorValid;
+                        e.target.parentElement.classList.add('error')
+                        e.target.setAttribute('aria-invalid','true');
+                    }
+                }
+            }
+            if(e.target.id == "password"){
+                if(e.target.value == 0)
+                    e.target.parentElement.classList.add('error')
+                e.target.setAttribute('aria-invalid','true');
+
+            }
+            if(e.target.value == 0) {
+                e.target.parentElement.classList.remove('active')
+            }
+        })
+    })
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+</script>

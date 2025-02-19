@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/profile.css">
+
+</head>
+<script>
+</script>
+<body class="">
+<div class="layout">
+    @@include('blocks/_header-part.html')
+    <div class="container-600 custom-padding">
+        <h2 class="page-title text-left">My referrals</h2>
+        <div class="referral-count mb-20">
+            <p class="main-count">4</p>
+            <p class="sub-count">+1 last 7 days</p>
+        </div>
+        <div class="info-block mb-40">
+        <p>Send few invites and start earning <a href="">TD-coins</a></p>
+            <p>Exchange TD-coins for a various <a href="">rewards</a></p>
+        </div>
+            <form action="" class="referral-form" id="registerReferral">
+                <h4 class="text-left mb-20">Invite friends</h4>
+
+                <div class="form">
+                    <div class="row">
+                        <div class="p-2">
+                            <div class="form-row firstname-form-row">
+                                <input class="all-cback-inp" value="" placeholder="" name="obj[data][refname]" type="text" id="firstName" autocomplete="off">
+                                <label for="firstName" class="label">First name</label>
+                                <span class="all-cback-inp-span cback-inp-error-text">*The first name field is required</span>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="form-row lastname-form-row">
+                                <input class="all-cback-inp" value="" placeholder="" name="obj[data][reflastname]" type="text" id="lastName" autocomplete="off">
+                                <label for="lastName" class="label">Last name</label>
+                                <span class="all-cback-inp-span cback-inp-error-text">*The last name field is required</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row email-form-row">
+                        <input class="all-cback-inp" value="" placeholder="" name="obj[data][refemail]" type="email" id="email" autocomplete="off">
+                        <label for="email" class="label">Email*</label>
+                        <span class="all-cback-inp-span cback-inp-error-text">*Enter email correctly</span>
+
+                    </div>
+                </div>
+                <div class="btn-row btn-right">
+                    <button type="submit" class="btn">Invite</button>
+
+                </div>
+            </form>
+        <div class="referal-block mb-40">
+            <h4 class="text-left mb-20">Referral link</h4>
+            <div class="qr-container hide qr-container-invite">
+            <canvas id="qrcode-invite"></canvas>
+                <button class="" id="download_qr_invite"><img src="/images/download.svg" alt=""></button>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js" defer></script>
+            </div>
+            <p>Your referral link</p>
+
+            <div class="ref-cont"><span id="ref-code">dsjfkdsfuhaskdgfjgdasjf</span><button class="promocode_copy_btn" type="button"><img src="/images/copy-ico.svg" alt="copy"></button></div>
+
+        </div>
+
+        <div class="referral-list-container mb-40">
+                <h3 class="text-center mb-20">Your referrals</h3>
+            <div class="ref-person ref-person-title">
+                <div class="ref-p-img"></div>
+                <div class="ref-p-name">
+                    <p>Name</p>
+                </div>
+                <div class="ref-p-time">
+                    <span>Referred</span>
+                </div>
+                <div class="ref-p-rewards">
+                    <span>Rewards</span>
+                </div>
+            </div>
+    <div class="referral-list">
+            <div class="ref-person">
+                <div class="ref-p-img"><div class="img"><img src="/images/user-ico.svg" alt="Person"></div></div>
+                <div class="ref-p-name">
+                    <p>Sasha</p>
+                    <p>Referralingus</p>
+                </div>
+                <div class="ref-p-time">
+                    <p>10 days ago</p>
+                </div>
+                <div class="ref-p-rewards">
+                    <p>20$</p>
+                </div>
+            </div>
+            <div class="ref-person">
+                <div class="ref-p-img"><div class="img"><img src="/images/user-ico.svg" alt="Person"></div></div>
+                <div class="ref-p-name">
+                    <p>Sasha</p>
+                    <p>Referralingus</p>
+                </div>
+                <div class="ref-p-time">
+                    <p>10 days ago</p>
+                </div>
+                <div class="ref-p-rewards">
+                    <p>20$</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    obj[data][showCourierorder]
+    @@include('blocks/footer.html')
+
+<!--    add to script file. exmpl main.js-->
+    <script>
+        const makeQR = (data) => {
+            let qrcodeContainer = document.getElementById("qrcode-invite");
+            qrcodeContainer.innerHTML = "";
+            new QRious({
+                element: qrcodeContainer,
+                value: data,
+                size: 200,
+                padding:0,
+            }); // generate QR code in canvas
+            document.querySelector('.qr-container-invite').classList.remove('hide')
+        }
+        // makeQR(document.querySelector('#ref-code').innerHTML)
+        document.querySelector(".qr-container").addEventListener("click",function (e){
+            downloadQR()
+        })
+        window.onload = function (e){
+            makeQR(document.querySelector('#ref-code').innerHTML)
+
+        }
+        function downloadQR() {
+            // let nm = "-" +document.querySelector('.a-ok-user').innerHTML;
+            let nm = "-";
+            var link = document.createElement('a');
+            link.download = `TD-invite${nm}.png`;
+            link.href = document.getElementById('qrcode-invite').toDataURL()
+            link.click();
+        }
+        $(".promocode_copy_btn").click(function (e) {
+            let code = $("#ref-code").html()
+            copyTextToClipboard(code)
+            showFeedback2("copied to clipboard","","ok", "short")
+        })
+        function copyTextToClipboard(text) {
+            if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(text);
+                return;
+            }
+            navigator.clipboard.writeText(text).then(function() {
+                console.log('Async: Copying to clipboard was successful!');
+            }, function(err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Fallback: Copying text command was ' + msg);
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+
+            document.body.removeChild(textArea);
+        }
+    </script>

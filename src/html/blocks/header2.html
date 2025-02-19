@@ -16,9 +16,12 @@
 <body class="">
 <div class="layout">
     <header>
+        <div class="ring"></div>
         <div class="container">
             <div class="td-header-in">
-                <a href="/" class="td-logo"><img src="/images/mainp/logo.svg" alt="Transport Domus"></a>
+                <a href="/" class="td-logo">
+                    <img class="lozad" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/images/transport-domus-logo.svg" alt="Transport Domus logo">
+                    <img src="/images/mainp/logo.svg" alt="Transport Domus"></a>
                 <div class="td-head-right">
                     <div class="td-hr-itm">
                         <a href="" class="td-phone"><img src="/images/mainp/phone.png" alt="phone"> <span>514 709 4588</span></a>
@@ -38,13 +41,13 @@
                                     <ul>
                                         <li><a href="/services/moving">Moving</a></li>
                                         <li><a href="/services/delivery">Delivery</a></li>
+                                        <li><a href="/services/delivery">Taxi</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="language show arr-down td-hr-itm">
-
                         <div class="cur_lang"><span class="eng "><span>Eng</span></span></div>
                         <ul class="lang-list"><li class="active"><a href="/" class="eng"><span>English</span></a></li><li><a href="/fr" class="fr"><span>French</span></a></li></ul>
 
@@ -53,7 +56,7 @@
             </div>
         </div>
     </header>
-    <div class="default_popup2" id="auth_popup" style="z-index: 42">
+    <div class="default_popup2 auth-bl" id="auth_popup" style="z-index: 42">
         <div class="popup_close2">
             <div class="icon-close2"><span></span></div>
         </div>
@@ -63,6 +66,55 @@
                     <div class="login_block">
                         <h3>Log In</h3>
 <!--                login form here-->
+                            <div class="login-block">
+                                <div class="main_login">
+                                    <form action="/login" method="post" id="loginform">
+                                        <div class="form">
+                                            <div class="form-row email-form-row active error">
+                                                <label for="email" class="label">Email * </label>
+                                                <input class="all-cback-inp" value="" placeholder="" name="obj[data][email]" type="email" id="email" autocomplete="email" required="" autocompletetype="email" aria-invalid="true">
+                                                <span class="all-cback-inp-span cback-inp-error-text">The email field must be a valid email</span>
+                                            </div>
+                                            <div class="form-row password-form-row active">
+                                                <label for="password" class="label">Password * </label>
+                                                <input class="all-cback-inp" value="" placeholder="" name="obj[data][password]" type="password" id="password" autocomplete="password" required="" autocompletetype="password">
+                                                <span class="all-cback-inp-span cback-inp-error-text">*Enter your password </span>
+
+                                                <button type="button" class="show-pass"><img src="/images/icon_eye.svg" alt="show password"></button>
+                                            </div>
+                                        </div>
+                                        <div class="form-outro">
+                                            <a href="/registration/forgot-password" class="d-block">I`ve forgotten my password </a>
+                                        </div>
+                                        <button type="submit" class="btn loadcss">Log in </button>
+                                        <img style="background: no-repeat;width: 30px;margin: 0 auto 0 auto; display:none;" src="/images/loading13.gif" class="loadcss">
+                                    </form>
+                                </div>
+                                <div class="other_login">
+                                    <div class="other-login-in">
+                                        <div class="google-auth-css">
+                                            <button class="google-auth-css-btn my-awesome-button" id="google-auth-css-btn" onclick="handleGoogleLogin()">
+                                                <img src="/images/google-ico.png" alt="google">
+                                                <span> Continue with Google</span>
+                                            </button>
+
+                                        </div>
+
+                                        <div class="fb-auth-css">
+                                            <button class="fb-auth-css-btn" id="fb-auth-css-btn">
+                                                <img src="/images/fb-ico.png" alt="facebook">
+                                                <span> Continue with Facebook</span>
+                                            </button>
+                                            <div class="fb-login-button fb_iframe_widget" data-width="200" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false" login_text="" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1601585447421144&amp;auto_logout_link=false&amp;button_type=&amp;container_width=0&amp;layout=&amp;locale=en_US&amp;login_text=&amp;sdk=joey&amp;size=&amp;use_continue_as=false&amp;width=200"><span style="vertical-align: bottom; width: 0px; height: 0px;"><iframe name="f77ac7709f20722f6" width="200px" height="1000px" data-testid="fb:login_button Facebook Social Plugin" title="fb:login_button Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v21.0/plugins/login_button.php?app_id=1601585447421144&amp;auto_logout_link=false&amp;button_type=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df4a5ebc24b2c0a813%26domain%3Dtransportdomus.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Ftransportdomus.com%252Ffb5849658c2176c89%26relation%3Dparent.parent&amp;container_width=0&amp;layout=&amp;locale=en_US&amp;login_text=&amp;sdk=joey&amp;size=&amp;use_continue_as=false&amp;width=200" class="" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></div>
+                                        </div>
+                                        <div class="apple-auth-css">
+                                            <div id="appleid-signin"></div>
+                                            <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                         <div class="reg_block">
                             <h3>Register</h3>

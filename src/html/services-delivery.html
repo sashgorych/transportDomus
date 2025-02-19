@@ -100,7 +100,7 @@
                                         <span class="all-cback-inp-span cback-inp-error-text">*The field is&nbsp;required</span>
                                     </div>
                                     <span>to</span>
-                                    <div class="form-row">
+                                    <div class="form-row ">
                                         <label for="date-end" class="label">Date to*</label>
                                         <input class="all-cback-inp requiredFill" value="" placeholder=""
                                                name="obj[data][date_to]" autocomplete="off" type="text"
@@ -110,23 +110,80 @@
                                 </div>
                             </div>
                             <div class="p-3">
-                                <div class="form-row timeType-form-row active">
-                                    <label for="timeType" class="label">Time *</label>
-                                    <select class="custom-select custom-select-lg requiredFill"
-                                            name="obj[data][time]" id="timeType">
-                                        <option value="" disabled selected>Time</option>
-                                        <option value="08:00 - 09:00">08:00 - 09:00</option>
-                                        <option value="09:00 - 10:00">09:00 - 10:00</option>
-                                        <option value="10:00 - 11:00">10:00 - 11:00</option>
-                                        <option value="11:00 - 12:00">11:00 - 12:00</option>
-                                        <option value="12:00 - 14:00">12:00 - 14:00</option>
-                                        <option value="14:00 - 16:00">14:00 - 16:00</option>
-                                        <option value="16:00 - 18:00">16:00 - 18:00</option>
-                                        <option value="18:00 - 19:00">18:00 - 19:00</option>
+                                                                <div class="form-row timeType-form-row active">
+                                                                    <label for="timeType" class="label">Time *</label>
+                                                                    <div class="time mt-5 pt-5">
+                                                                        <div class="selected">
+                                                                            <span class="time-btn" id="hours">12</span>:<span class="time-btn" id="minutes">00</span>
+                                                                        </div>
+                                                                        <div id="time-picker" class="p-4">
+                                                                            <div class="pb-2">
+                                                                                <div class="col-2"><span class="item">00</span></div>
+                                                                                <div class="col-2"><span class="item">01</span></div>
+                                                                                <div class="col-2"><span class="item">02</span></div>
+                                                                                <div class="col-2"><span class="item">03</span></div>
+                                                                                <div class="col-2"><span class="item">04</span></div>
+                                                                                <div class="col-2"><span class="item">05</span></div>
+                                                                            </div>
+                                                                            <div class="pb-2">
+                                                                                <div class="col-2"><span class="item">06</span></div>
+                                                                                <div class="col-2"><span class="item">07</span></div>
+                                                                                <div class="col-2"><span class="item">08</span></div>
+                                                                                <div class="col-2"><span class="item">09</span></div>
+                                                                                <div class="col-2"><span class="item">10</span></div>
+                                                                                <div class="col-2"><span class="item">11</span></div>
+                                                                            </div>
+                                                                            <div class=" pb-2">
+                                                                                <div class="col-2"><span class="item active">12</span></div>
+                                                                                <div class="col-2"><span class="item">13</span></div>
+                                                                                <div class="col-2"><span class="item">14</span></div>
+                                                                                <div class="col-2"><span class="item">15</span></div>
+                                                                                <div class="col-2"><span class="item">16</span></div>
+                                                                                <div class="col-2"><span class="item">17</span></div>
+                                                                            </div>
+                                                                            <div class="">
+                                                                                <div class="col-2"><span class="item">18</span></div>
+                                                                                <div class="col-2"><span class="item">19</span></div>
+                                                                                <div class="col-2"><span class="item">20</span></div>
+                                                                                <div class="col-2"><span class="item">21</span></div>
+                                                                                <div class="col-2"><span class="item">22</span></div>
+                                                                                <div class="col-2"><span class="item">23</span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
 
-                                    </select>
-                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
-                                </div>
+                                                                    <select class="hidden-object custom-select custom-select-lg requiredFill"
+                                                                            name="obj[data][time]" id="timeType">
+                                                                        <option value="" disabled selected>Time</option>
+                                                                        <option value="08:00 - 09:00">08:00 - 09:00</option>
+                                                                        <option value="09:00 - 10:00">09:00 - 10:00</option>
+                                                                        <option value="10:00 - 11:00">10:00 - 11:00</option>
+                                                                        <option value="11:00 - 12:00">11:00 - 12:00</option>
+                                                                        <option value="12:00 - 14:00">12:00 - 14:00</option>
+                                                                        <option value="14:00 - 16:00">14:00 - 16:00</option>
+                                                                        <option value="16:00 - 18:00">16:00 - 18:00</option>
+                                                                        <option value="18:00 - 19:00">18:00 - 19:00</option>
+
+                                                                    </select>
+                                                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>
+                                                                </div>
+<!--                                <div class="form-row timeType-form-row active">-->
+<!--                                    <label for="timeType" class="label">Time *</label>-->
+<!--                                    <select class="custom-select custom-select-lg requiredFill"-->
+<!--                                            name="obj[data][time]" id="timeType">-->
+<!--                                        <option value="" disabled selected>Time</option>-->
+<!--                                        <option value="08:00 - 09:00">08:00 - 09:00</option>-->
+<!--                                        <option value="09:00 - 10:00">09:00 - 10:00</option>-->
+<!--                                        <option value="10:00 - 11:00">10:00 - 11:00</option>-->
+<!--                                        <option value="11:00 - 12:00">11:00 - 12:00</option>-->
+<!--                                        <option value="12:00 - 14:00">12:00 - 14:00</option>-->
+<!--                                        <option value="14:00 - 16:00">14:00 - 16:00</option>-->
+<!--                                        <option value="16:00 - 18:00">16:00 - 18:00</option>-->
+<!--                                        <option value="18:00 - 19:00">18:00 - 19:00</option>-->
+
+<!--                                    </select>-->
+<!--                                    <span class="all-cback-inp-span cback-inp-error-text">*The field is required</span>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>

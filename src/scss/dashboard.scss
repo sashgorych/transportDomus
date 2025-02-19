@@ -1,5 +1,14 @@
 @import './blocks/_forms.scss';
 @import './blocks/colors.scss';
+.foo-c .foo-c-1{
+  display: none;
+}
+.foo-c .foo-c-2{
+  display: none;
+}
+.foo-c{
+  justify-content: flex-end;
+}
 .td-logo img {
   max-width: 200px;
 }
@@ -69,14 +78,14 @@ header .create-request{
 
   position: fixed;
   left: -200px;
-  top: 57px;
+  top: 110px;
 
   &.active {
     left: 0;
 
     .toggle-d-menu {
       left: 148px;
-      top: 65px;
+      top: 110px;
 
       button:nth-child(1) {
         display: none;

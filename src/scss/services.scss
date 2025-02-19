@@ -694,7 +694,9 @@ input.plus-minus-inp::-webkit-inner-spin-button {
   line-height: 1.5;
   border-radius: 10px;
 }
-
+.prev-btn-nopos{
+  margin-bottom: 0;
+}
 .waste-service-info {
   padding-left: 80px;
 }
@@ -869,6 +871,18 @@ input.plus-minus-inp::-webkit-inner-spin-button {
       background: $green;
       color: white;
       font-weight: bold;
+    }
+    &:disabled{
+      border-color: #ebebeb;
+      background: #ebebeb;
+      color: #c3c3c3;
+      cursor: default;
+      &:hover, &:focus {
+        box-shadow: unset!important;
+      }
+      img{
+        opacity: 0.6;
+      }
     }
   }
 
@@ -1113,6 +1127,12 @@ input.plus-minus-inp::-webkit-inner-spin-button {
   margin-bottom: 8px;
   display: flex;
   align-items: center;
+  .read_reviews{
+    font-size: 15px;
+    color: #597a35;
+    margin-left: 7px;
+    text-decoration: underline;
+  }
   span{
     text-transform: uppercase;
     color: $green;
@@ -1127,3 +1147,152 @@ input.plus-minus-inp::-webkit-inner-spin-button {
 .error .select2-container--default .select2-selection--single{
   border-color: red;
 }
+
+/*auth start*/
+.last-step-register-page{
+  display: flex;
+  justify-content: space-between;
+  .login-block{
+    flex-direction: column;
+  }
+  .auth-bl .login_block{
+    border-right: 1px solid #d6d4d1;
+  }
+  .auth-bl .login-block .main_login{
+    border: none;
+    width: 100%;
+  }
+  .auth-bl .login-block .other_login{
+    width: 100%;
+    margin-top: 80px;
+  }
+  .auth-bl-page{
+    width:50%;
+  }
+  .auth-container{
+    width:50%;
+    padding: 0 40px;
+
+  }
+}
+/*auth end*/
+
+/*time picker start*/
+:root{
+  --main-color: #1a535c;
+  --secondary-color: #4ecdc4;
+  --white-color: #f7fff7;
+  --main-accent-color: #ff6b6b;
+  --secondary-accent-color: #ffe66d;
+  --dark-color: #2D232E;
+}
+.time{
+  position: relative;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 15px 6px 6px 6px;
+  margin-bottom: 4px;
+  border: 1px solid #ccc;
+  max-height: 38px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.error .time{
+  border-color: #dc3545;
+  padding-right: calc(1.5em + .75rem) !important;
+  background-image: url(
+  "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545'%3E%3Ccircle cx='6' cy='6' r='4.5'/%3E%3Cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3E%3Ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3E%3C/svg%3E"
+  );
+  background-repeat: no-repeat;
+  background-position: right calc(.375em + .1875rem) center;
+  background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+
+}
+.time .selected{
+  text-align: left;
+  font-size: 15px;
+  color: black;
+}
+
+.time .time-btn{
+  transition: all ease-out 0.3s;
+  cursor: pointer;
+}
+
+.time .time-btn:hover{
+  color: #00c100;
+  text-shadow: 2px 2px 5px #000000;
+}
+
+.time .time-btn.active{
+  color: #1ed558;
+  //text-shadow: 2px 2px 5px #000000;
+}
+
+#time-picker{
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  background: #dee7d5;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all ease-out 0.3s;
+  top: 75%;
+  z-index: 12;
+  pointer-events: none;
+  min-width: 310px;
+}
+
+#time-picker.active{
+  opacity: 1;
+  top: 102%;
+  pointer-events: all;
+
+}
+span.chose_time_text{
+  padding-left: 14px;
+  padding-bottom: 6px;
+  display: block;
+}
+#time-picker.active .item{
+  cursor: pointer;
+  transition: all ease-out 0.3s;
+  transition-duration: 0.3s;
+  opacity: 0.5;
+  display: block;
+  transform-origin: center;
+}
+
+#time-picker.active .item:hover{
+  text-shadow: 2px 2px 5px black;
+  opacity: 1;
+  transform: scale(1.2, 1.2);
+}
+
+#time-picker.active .item.active{
+  opacity: 1;
+  color: var(--secondary-accent-color);
+}
+.pb-2{
+  display: flex;
+
+}
+.pb-4{
+  display: flex;
+.col-time{
+  margin: 7px 15px 7px 15px;
+  width: calc(25% - 30px);
+}
+}
+.pb-6{
+  display: flex;
+.col-time{
+  margin: 7px 15px 7px 15px;
+  width: calc(16.6% - 30px);
+}
+}
+/*time picker end*/

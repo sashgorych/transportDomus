@@ -924,3 +924,139 @@ function templatePreviewMovingTo(data = []) {
 if(document.querySelector('.preview-page')){
     preparePreview(orderDataPreview)
 }
+
+
+//time picker start
+timePickerInit()
+function timePickerInit(){
+    var hoursColumnNumber = 6;
+    var minutesColumnNumber = 4;
+    var minutesStep = 5;
+    var minHour = 5;
+    var maxHour = 23;
+    $(document).on('click', '.time .selected', function(e){
+
+        console.log($(e.target).hasClass('time-btn'));
+        if($(e.target).hasClass('time-btn')){
+            let $btn = $(e.target);
+            if ($btn.hasClass('active')){
+                console.log('chiusura');
+                timePickerClose();
+            } else {
+                console.log('apertura');
+                if ($('#time-picker').hasClass('active')){
+                    timePickerClose(function(){
+                        $btn.addClass('active');
+                        timePickerOpen();
+                    });
+                } else {
+                    $btn.addClass('active');
+                    timePickerOpen();
+                }
+            }
+        }else{
+            if ($('#time-picker').hasClass('active')){
+                timePickerClose(function(){
+                    timePickerOpen();
+                });
+            } else {
+                timePickerOpen();
+            }
+        }
+
+    });
+
+    $(document).on('click', '#time-picker .item', function(){
+        if($(this).hasClass('now-item')){
+            let time = $(this).attr('data-time');
+            let hh = time.split(':')[0];
+            let mm = time.split(':')[1];
+            $('.time-btn#hours').text(hh);
+            $('.time-btn#minutes').text(mm);
+            timePickerClose();
+            return;
+        }
+        if (!$(this).hasClass('active')){
+            $('.item.active').removeClass('active');
+            $(this).addClass('active');
+            let value = $(this).text();
+            $('.time-btn.active').text(value);
+            timePickerClose();
+        }
+    });
+    function formatTime(date) {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        return hours + ":" + minutes;
+    }
+    function addNowTime(){
+        let nowT = formatTime(new Date());
+        let tmpl = `<div class="col-time"><span class="item now-item" data-time="${nowT}">Now</span></div>`;
+        return tmpl;
+    }
+    function timePickerOpen(){
+        $(".timeType-form-row").removeClass('error')
+        let hourorminute = $('.time-btn.active').attr('id') || "hours"
+        let html = "";
+        switch(hourorminute){
+            case 'hours':
+                html+="<span>Chose time</span>"
+                let j = 0;
+                for (let i = minHour; i < maxHour+1; i++){
+                    if (j % 6 == 0){
+                        if(j != 0){
+                            html += '</div>';
+                        }
+                        html += '<div class="pb-6">';
+                    }
+                    let value = '0' + i;
+                    if(j == 0){
+                       html+= addNowTime()
+                    }
+                    html += '<div class="col-time"><span class="item">' + value.substr(-2) + '</span></div>';
+                    j++;
+                }
+                break;
+            case 'minutes':
+                html+="<span>Chose minutes</span>"
+                for (let i = 0; i < 60; i += minutesStep){
+                    if (i % minutesColumnNumber == 0){
+                        if(i != 0){
+                            html += '</div>';
+                        }
+                        html += '<div class="pb-4">';
+                    }
+                    let value = '0' + i;
+                    html += '<div class="col-time"><span class="item">' + value.substr(-2) + '</span></div>';
+                }
+                break;
+        }
+        html += '</div>';
+        $('#time-picker').html(html);
+        $('#time-picker .row:last-child').removeClass('pb-2');
+        $('#time-picker').addClass('active');
+    }
+
+    function timePickerClose(callback = false){
+        $('.time-btn.active').removeClass('active');
+        $('#time-picker').removeClass('active');
+        changeTimeValue()
+
+        if (callback){
+            setTimeout(function(){
+                callback();
+            }, getDurationInMs($('#time-picker').css('transition-duration')));
+        }
+    }
+function changeTimeValue() {
+    let tm = $("#hours").html() + ":"+$("#minutes").html()
+    console.log(tm);
+    $('#timeType').val(tm)
+}
+    function getDurationInMs(transitionDuration){
+        return parseFloat(transitionDuration.substr(0, transitionDuration.indexOf('s'))) * 1000;
+    }
+}
+//time picker end

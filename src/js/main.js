@@ -1,3 +1,12 @@
+//add 1vh var
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+    let vh2 = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh2}px`);
+});
+
+
 $('.language').click(function (e) {
     e.preventDefault();
     showDrop($('.language'))
@@ -683,8 +692,7 @@ function showFeedback2(title, content, status = 'error') {
         closeFeedbackPopup2()
     },30000)
 }
-customer_date
-customer_time
+
 function closeFeedbackPopup2() {
     clearTimeout(feedbackTimeout2)
     let popupOverlay = document.querySelector('.popup-feedback_overlay2')
@@ -702,18 +710,140 @@ function closeFeedbackPopup2() {
 
 
 
-<!-- If you are logged in, automatically get your name and email adress, your public profile information -->
-FB.login(function(response) {
-    if (response.authResponse) {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', {fields: 'name, email'}, function(response) {
-            document.getElementById("profile").innerHTML = "Good to see you, " + response.name + ". i see your email address is " + response.email
-        });
-    } else {
-        <!-- If you are not logged in, the login dialog will open for you to login asking for permission to get your public profile and email -->
-        console.log('User cancelled login or did not fully authorize.'); }
-});
 
-{
 
+
+
+
+
+// If the pen is in thumbnail view, scale it up
+if (location.pathname.includes("fullcpgrid")) {
+    document.documentElement.style.fontSize = "32px";
+    const notificationsEl = document.querySelector(".notifications");
+    if (notificationsEl) {
+        notificationsEl.style.transform = "translate(0.5rem, calc(-50% + 3rem))";
+    }
 }
+
+class Notifications_modern {
+    constructor(el) {
+        this.el = el;
+    }
+
+    // Function to create new elements with a class (cleans up code)
+    createDiv(className = "") {
+        const el = document.createElement("div");
+        el.classList.add(className);
+        return el;
+    }
+
+    // Function to add text nodes to elements
+    addText(el, text) {
+        el.appendChild(document.createTextNode(text));
+    }
+    // Function to add class to element
+    addClass(el, clasName) {
+        el.classList.add(clasName);
+    }
+    // Function to add html to element
+    addHtml(el, template) {
+        el.insertAdjacentHTML("beforeend", template);
+    }
+
+    create(
+        title = "Untitled notification",
+        description = "",
+        status = "info",
+        duration = 2,
+        destroyOnClick = false,
+        clickFunction = undefined
+    ) {
+        // Functions
+        const destroy = (animate) => {
+            if (animate) {
+                notiEl.classList.add("out");
+                notiEl.addEventListener("animationend", () => notiEl.remove());
+            } else {
+                notiEl.remove();
+            }
+        };
+
+        // Create the elements and add their content
+        const notiEl = this.createDiv("noti");
+        const notiCardEl = this.createDiv("noticard");
+        const glowEl = this.createDiv("notiglow");
+        const borderEl = this.createDiv("notiborderglow");
+        const titleEl = this.createDiv("notititle");
+        const descriptionEl = this.createDiv("notidesc");
+        this.addHtml(titleEl, `<div class="icon-close2"><span></span></div>`)
+        this.addText(titleEl, title);
+        this.addText(descriptionEl, description);
+        this.addClass(notiEl, status)
+        // Append the elements to each other
+        notiEl.appendChild(notiCardEl);
+        notiCardEl.append(glowEl, borderEl, titleEl, descriptionEl);
+
+        if (this.el) {
+            this.el.appendChild(notiEl);
+        } else {
+            console.warn("Notification element container is missing.");
+        }
+
+        // Transition the height of the container to the height of the visible card
+        requestAnimationFrame(() => {
+            notiEl.style.height = `calc(0.25rem + ${notiCardEl.getBoundingClientRect().height}px)`;
+        });
+
+        // Hover animation
+        notiEl.addEventListener("mousemove", (event) => {
+            const rect = notiCardEl.getBoundingClientRect();
+            const localX = ((event.clientX - rect.left) / rect.width) * 100 + "%";
+            const localY = ((event.clientY - rect.top) / rect.height) * 100 + "%";
+
+            glowEl.style.left = localX;
+            glowEl.style.top = localY;
+            borderEl.style.left = localX;
+            borderEl.style.top = localY;
+        });
+
+        // Onclick function if one is set
+        if (clickFunction) {
+            notiEl.addEventListener("click", clickFunction);
+        }
+
+        // Destroy the notification on click if it is set to do so
+        if (destroyOnClick) {
+            notiEl.addEventListener("click", () => destroy(true));
+        }
+
+        // Remove the notification after the set time if there is one
+        if (duration > 0) {
+            setTimeout(() => destroy(true), duration * 1000);
+        }
+
+        return notiEl;
+    }
+}
+
+// Demo
+const notificationsContainer = document.querySelector(".notifications");
+const notis = new Notifications(notificationsContainer);
+
+
+/*
+How to use:
+
+create the notification object using new Notifications and pass it the notification wrapper element
+ex: const notis = new Notifications(document.querySelector(".notifications"))
+
+make notifications by using notis.create() (or *.create() if you named it something else)
+
+notis.create() parameters:
+  Title: string,
+  Description: string,
+  Duration: seconds (default: 2s, 0 makes it stay forever),
+  Destroy on click: boolean
+    (determines if the notification should disappear when clicked, default: false)
+  Click function: function
+    (gets called when the notification is clicked if it isnt undefined, default: undefined)
+*/

@@ -136,7 +136,40 @@
     </div>
 </section>
 @@include('blocks/footer.html')
-
+<div class="expert-rev-list">
+    <div class="profile-revs">
+        <div class="rev-name"><p>Sasha</p></div>
+        <div class="rev-star"><div class="rating-block">
+            <div class="rating" data-rate="100">
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+            </div>
+            <span>5 (1)</span>
+        </div></div>
+        <div class="rev-text">
+            <p>Plugin '.env files support' (version 0.6) was explicitly marked as incompatible with the current version of the IDE</p>
+        </div>
+    </div>
+    <div class="profile-revs">
+        <div class="rev-name"><p>Sasha</p></div>
+        <div class="rev-star"><div class="rating-block">
+            <div class="rating" data-rate="100">
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+            </div>
+            <span>5 (1)</span>
+        </div></div>
+        <div class="rev-text">
+            <p>Plugin '.env files support' (version 0.6) was explicitly marked as incompatible with the current version of the IDE</p>
+        </div>
+    </div>
+</div>
 <style>
     .h{
         border-collapse: collapse;padding: 5px;text-align: left;
@@ -145,3 +178,43 @@
 </style>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwiUJfNYOssvARiVlNspEPt36YXzyP_c&loading=async&libraries=geometry,places,geocoding&callback=initMapExpert" defer="" ></script>
+<script>
+    showTempPopup({
+        popupSize:"medium",
+        titleContent:"<p>Reviews </p>",
+        bodyContent:`<div class="expert-rev-list">
+    <div class="profile-revs">
+        <div class="rev-name"><p>Sasha</p></div>
+        <div class="rev-star"><div class="rating-block">
+            <div class="rating" data-rate="100">
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+            </div>
+            <span>5 (1)</span>
+        </div></div>
+        <div class="rev-text">
+            <p>Plugin '.env files support' (version 0.6) was explicitly marked as incompatible with the current version of the IDE</p>
+        </div>
+    </div>
+    <div class="profile-revs">
+        <div class="rev-name"><p>Sasha</p></div>
+        <div class="rev-star"><div class="rating-block">
+            <div class="rating" data-rate="100">
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+                <span class="rateStarPopup active"></span>
+            </div>
+            <span>5 (1)</span>
+        </div></div>
+        <div class="rev-text">
+            <p>Plugin '.env files support' (version 0.6) was explicitly marked as incompatible with the current version of the IDE</p>
+        </div>
+    </div>
+</div>`
+    })
+</script>

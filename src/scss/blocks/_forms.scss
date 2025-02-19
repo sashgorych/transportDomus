@@ -91,10 +91,12 @@
 }
 
 .form input {
+  background: white;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
   padding: 15px 6px 6px 6px;
   margin-bottom: 4px;
   border: 1px solid #ccc;
+  max-height: 38px;
   border-radius: 4px;
   box-sizing: border-box;
   width: 100%;
@@ -230,7 +232,15 @@
   color: gray;
   font-size: 9px;
 }
-
+input[type="time"]{
+  background: white;
+}
+.form-row.timeinp label:not(.no-label) {
+  top: -8px;
+  left: 7px;
+  color: gray;
+  font-size: 9px;
+}
 .form-outro {
   text-align: left;
 
@@ -658,6 +668,18 @@ textarea::placeholder {
     background-size: contain!important;
     background-repeat: no-repeat!important;
     user-select: none;
+    span{
+      display: none;
+      background: white;
+      position: absolute;
+      bottom: 30px;
+      color: black;
+      left: 0;
+      padding: 0px;
+      font-size: 14px;
+      width: 135px;
+      text-align: center;
+    }
   }
   #vehicle26 + .custom-control-label.veh-controll {
     background: url("../images/26ft.jpg");
@@ -684,12 +706,34 @@ textarea::placeholder {
   #vehicle4 + .custom-control-label.veh-controll {
     background: url("../images/4ft.jpg");
   }
+
+  #vehicleminibus + .custom-control-label.veh-controll {
+    background: url("../images/Minibus.jpg");
+  }
+  #vehicleminivan + .custom-control-label.veh-controll {
+    background: url("../images/Minivan.jpg");
+  }
+  #vehiclecar + .custom-control-label.veh-controll {
+    background: url("../images/Car.jpg");
+  }
+  #vehicleminivan_wheelchair_accessble + .custom-control-label.veh-controll {
+    background: url("../images/MinivanWheelchairAccessible.jpg");
+  }
 }
 @media screen and (max-width: 750px) and (min-width: 576px){
 }
 
 @media screen and (max-width: 630px){
+  #vehicle-row > div .helper-col .custom-control{
+    margin-top: -17px;
+  }
   #vehicle-row > div .veh-row > .custom-control .custom-control-label {
+    span{
+      bottom: 22px;
+      line-height: 13px;
+      width: 100px;
+      font-size: 13px;
+    }
     width: 180px;
     height: 100px;
   }

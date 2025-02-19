@@ -328,8 +328,8 @@ header{
   transition: .5s;
 }
 
-.form-row.active label,
-.form-row input:valid ~ label {
+.form-row.active label:not(.no-label),
+.form-row input:valid ~ label:not(.no-label) {
   top: -8px;
   left: 7px;
   color: gray;
@@ -731,6 +731,18 @@ legend{
     height: 200px;
     background-repeat: no-repeat !important;
     background-size: contain!important;
+    span {
+      display: none;
+      background: white;
+      position: absolute;
+      bottom: 30px;
+      color: black;
+      left: 0;
+      padding: 0px;
+      font-size: 14px;
+      width: 135px;
+      text-align: center;
+    }
   }
   #vehicle26 + .no-label {
     background: url("../images/26ft.jpg");
@@ -756,6 +768,18 @@ legend{
   }
   #vehicle4 + .no-label {
     background: url("../images/4ft.jpg");
+  }
+  #vehicleminibus + .no-label {
+    background: url("../images/Minibus.jpg");
+  }
+  #vehicleminiven + .no-label {
+    background: url("../images/Minivan.jpg");
+  }
+  #vehiclecar + .no-label {
+    background: url("../images/Car.jpg");
+  }
+  #vehiclefourtype + .no-label {
+    background: url("../images/MinivanWheelchairAccessible.jpg");
   }
 }
 
@@ -793,3 +817,52 @@ legend{
 
 }
 /*vehicle choose end*/
+
+/*page service register start*/
+.last-step-register-page{
+  display: flex;
+.auth-bl-page{
+  padding-top: 50px;
+  width: 50%;
+}
+  .auth-container{
+    max-width: unset;
+    width: 50%;
+  }
+  .auth-bl .login-block{
+    flex-direction: column;
+  }
+  .auth-bl .other-login-in{
+    margin: 30px auto 0;
+  }
+  .auth-bl .login_block{
+    h3{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    padding: 25px;
+  }
+  .auth-bl .login-block .main_login{
+    border-right: none;
+  }
+  .last-step-register-page .auth-bl .login-block .other_login{
+    width: 100%;
+  }
+  .auth-bl .login-block .main_login{
+    width: 100%;
+  }
+  .auth-bl .login-block .other_login{
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 992px){
+.service_notification_block{
+  p{
+    font-size: 21px;
+    line-height: 31px;
+  }
+}
+}
+/*page service register end*/
